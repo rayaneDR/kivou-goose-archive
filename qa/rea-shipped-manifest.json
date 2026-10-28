@@ -1,0 +1,25 @@
+{
+  "scope": "Exact five-file extraction from packaged application, dependencies/renderer/Rust excluded",
+  "files": [
+    {
+      "path": "package.json",
+      "sha256": "8d2c870072e70ba0f5f5642284de056e7d1fc23403653e7784e4bf58562915f8"
+    },
+    {
+      "path": "main.cjs",
+      "sha256": "26c3428235808c0f532d7b04623e864fbc98319960092e8e78b4baa7609ff522"
+    },
+    {
+      "path": "preload.cjs",
+      "sha256": "0980e25b44fbce95e3d1106b1d304cce94068429ccb556b15bb1678fbf6a4ef3"
+    },
+    {
+      "path": "service.mjs",
+      "sha256": "8ebaf28015b6b100d4508630b5194bcfc05df0d201b2f9e754d8b325d044b70a"
+    },
+    {
+      "path": "codex-guard.mjs",
+      "sha256": "24cd52b2a28779d9d91c846c065e915d6fc094b962090f2952773e8a81ffeccd"
+    }
+  ]
+}

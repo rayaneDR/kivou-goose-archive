@@ -99,3 +99,17 @@ gooseselftest/
 /crates/goose-sdk/examples/uniffi/kotlin/build/
 
 live-in-desktop-design
+
+# Kivou local runtime, output and verification scratch
+/ui/creator/dist/
+/ui/creator/out/
+/ui/creator/.runtime/
+/creator/.runtime/
+/qa/private/
+/promo/out/
+/releases/
+/qa/fixtures/
+/ui/creator/service.mjs
+/ui/creator/codex-guard.mjs
+/ui/creator/LICENSE
+/ui/creator/UPSTREAM.md

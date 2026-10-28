@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-28T16:04:17.647Z",
+  "passed": true,
+  "status": "completed",
+  "provider": "Actual packaged Kivou.exe → bundled Goose1.56.0 → bundled ACP2.3.0 → installed Codex ChatGPT",
+  "elapsedMs": 50928,
+  "runId": "86a5c5b0-c174-4f9a-8869-b28655509650",
+  "hooks": 3,
+  "files": [
+    "result.md",
+    "result.json",
+    "state.json",
+    "events.jsonl"
+  ],
+  "synthetic": false,
+  "input": "Original demonstration text; no client data",
+  "source": "Same packaged runtime that will be zipped"
+}

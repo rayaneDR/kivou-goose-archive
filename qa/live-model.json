@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-28T15:25:42.799Z",
+  "id": "7fbe9502-8e4e-4266-b3c0-d18dca74ef95",
+  "status": "completed",
+  "provider": "Codex ChatGPT through Goose/ACP",
+  "elapsedMs": 40678,
+  "hooks": 3,
+  "files": [
+    "result.md",
+    "result.json",
+    "state.json",
+    "events.jsonl"
+  ],
+  "directory": "qa/private/live/runs/7fbe9502-8e4e-4266-b3c0-d18dca74ef95",
+  "synthetic": false,
+  "input": "Original demonstration brief; no client material",
+  "serviceRssBytes": 49438720,
+  "memoryScope": "Service process only; excludes Electron and model child processes"
+}

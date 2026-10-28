@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-28T16:03:26.225Z",
+  "passed": true,
+  "scope": "packaged app",
+  "memory": {
+    "workingSetKB": 554524,
+    "peakWorkingSetKB": 575496,
+    "scope": "Electron app processes during deterministic workflow; no active model process"
+  },
+  "providerAvailable": true,
+  "checks": [
+    "Three workflow forms",
+    "AI controls gated on connection and consent",
+    "Native folder selection bridge",
+    "Asset Manifest end-to-end",
+    "Unicode filename preserved",
+    "Original files unchanged",
+    "Result persisted after renderer reload",
+    "No renderer errors",
+    "No horizontal overflow at 1440/900/390",
+    "Heading focus follows view navigation",
+    "Asset table has semantic column headers",
+    "Polite workflow status live region exists"
+  ],
+  "fixtures": "Synthetic file contents; real deterministic inventory and Electron IPC; no AI response mocked"
+}

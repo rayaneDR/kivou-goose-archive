@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-28T15:47:41.946Z",
+  "runId": "0a6fa504-2a5a-406a-afac-5d20e4918da2",
+  "status": "completed",
+  "error": null,
+  "elapsedMs": 45683,
+  "sourceCount": 1,
+  "sourceStatus": "unverified",
+  "gooseMode": "approve",
+  "runtimePolicy": {
+    "policy": "kivou-read-only-v1",
+    "mcpDisabled": true,
+    "pluginsDisabled": true,
+    "shellDisabled": true,
+    "hostSkillsDisabled": true,
+    "webSearch": "live"
+  },
+  "retrievalIndependentlyObserved": false,
+  "scope": "One actual Research workflow via normal ChatGPT subscription, public W3C source only; no client material; unchanged MCP/shell/plugin restrictions"
+}

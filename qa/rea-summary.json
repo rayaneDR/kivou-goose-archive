@@ -1,0 +1,50 @@
+{
+  "evidenceId": "ev_d01a6ddb057ccb4d3db3473f9fda7e12850b423802a6f3ab0d90e1ca4682152f",
+  "operation": "analyze_javascript_application",
+  "scope": "Frozen exact five-file extraction of final packaged app; four selected source files. Renderer, dependencies and native Rust binary excluded. Static observations do not establish runtime enforcement.",
+  "summary": {
+    "browser_windows": 1,
+    "explicit_web_preferences": 4,
+    "preload_entrypoints": 1,
+    "context_bridge_apis": 1,
+    "exposed_api_members": 10,
+    "ipc": {
+      "operations": 4,
+      "literal_channels": 1,
+      "dynamic_channel_operations": 2,
+      "renderer_transmissions": 1,
+      "renderer_listeners": 2,
+      "main_handlers": 1,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "sourceSelection": {
+    "requested_paths": [
+      "main.cjs",
+      "preload.cjs",
+      "service.mjs",
+      "codex-guard.mjs"
+    ],
+    "unselected_files": 1
+  },
+  "limitations": [
+    "Caller-selected source analysis leaves 1 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+    "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+    "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+  ],
+  "sourceManifest": "qa/rea-shipped-manifest.json"
+}

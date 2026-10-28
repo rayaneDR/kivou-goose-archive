@@ -1,0 +1,21 @@
+feature,area,priority,original,clone,notes
+Rust agent and CLI,runtime,must,yes,yes,Inherited source at goose v1.56.0; original CLI version observed; not a new Kivou implementation
+Preserved upstream desktop source,desktop,must,yes,yes,Inherited general-purpose app unchanged; Kivou has a separate focused ui/creator application
+Codex ACP provider,runtime,must,yes,yes,Actual Content Pack and Research calls completed; packaged provider availability passed
+Creator welcome and provider repair,onboarding,must,no,yes,Implemented; connection and consent gating checked in development Electron smoke
+Creator workflow dashboard,desktop,must,no,yes,Implemented; actual screenshot qa/dashboard.png; no overflow at 1440/900/390
+Research Brief,research,must,no,yes,Real corrected call completed in 45.683 seconds with 1 W3C source; links always unverified
+Content Pack,content,must,no,yes,Real provider result in 40.678 seconds with 3 hooks and 4 record files; packaged path retest pending
+Asset Manifest,assets,must,no,yes,Real deterministic inventory through Electron IPC with 3 synthetic files; originals unchanged
+One active workflow,execution,must,no,yes,Service and controlled-process tests; 24 passing tests
+Cancel with partial output,execution,must,no,yes,Run lock held until exit; controlled-process and filesystem cases; 24 passing tests
+Interrupted run recovery,execution,must,no,yes,Service and controlled filesystem test; no automatic replay
+Non-overwriting delivery exports,files,must,no,yes,Separate delivery export service; controlled filesystem cases
+Unicode input and filenames,files,must,no,yes,Arabic filename preserved in actual development inventory; automated cases included
+Native picker path grants,files,must,no,yes,Main sender and folder grant checks; bridge exercised in development smoke
+English original product documentation,docs,must,no,yes,Original README and focused guide; upstream README preserved
+Windows portable x64 package,distribution,must,yes,partial,Packaged smoke and provider availability passed; final Research-fix repackage and ZIP pending
+English Remotion product ad,media,should,no,yes,1080p 24-second MP4 rendered; frame inspection and actual Edge playback passed; editable source in promo
+Automatic public publishing,publishing,could,skip,skip,Outside v1; no send or publishing workflow added
+Video generation and transcription,media,could,skip,skip,Outside v1
+macOS and Linux support claim,distribution,could,skip,skip,Upstream supports other systems; this distribution has not tested them

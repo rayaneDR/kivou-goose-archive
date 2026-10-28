@@ -1,0 +1,24 @@
+name: Kivou Windows checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  creator:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: ui/creator/package-lock.json
+      - name: Test creator runtime and policy guard
+        run: node --test creator/tests/*.test.mjs
+      - name: Install focused UI dependencies
+        working-directory: ui/creator
+        run: npm ci
+      - name: Typecheck and build
+        working-directory: ui/creator
+        run: npm run build

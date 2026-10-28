@@ -1,0 +1,35 @@
+{
+  "name": "kivou",
+  "productName": "Kivou",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An open-source creator assistant, built on Goose",
+  "author": "rayaneDR",
+  "license": "Apache-2.0",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4178",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "start": "electron .",
+    "package:windows": "node scripts/package-windows.mjs"
+  },
+  "dependencies": {
+    "@agentclientprotocol/codex-acp": "^2.3.0",
+    "@fontsource/dm-sans": "5.2.8",
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "^19.0.0",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.1.0",
+    "electron": "43.4.0",
+    "typescript": "~5.9.3",
+    "vite": "7.2.2"
+  }
+}

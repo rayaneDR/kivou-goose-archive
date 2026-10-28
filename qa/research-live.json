@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-28T15:39:35.788Z",
+  "status": "failed",
+  "error": "The model did not return a valid JSON deliverable. Its partial response was saved for review.",
+  "elapsedMs": 64912,
+  "sourceCount": 0,
+  "sourceStatus": null,
+  "nativeWebSearchConfigured": "live",
+  "retrievalIndependentlyObserved": false,
+  "scope": "Actual model call, source claims remain unverified by Kivou; no client material",
+  "runId": "cbefcc4c-38a7-4b62-b2fb-e21dbd53eb4f"
+}

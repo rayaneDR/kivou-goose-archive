@@ -1,0 +1,11 @@
+import {CreatorService} from '../../../creator/service.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+const dataDir=path.resolve(process.env.KIVOU_TEST_DATA||'../../qa/private/live');
+const service=new CreatorService({dataDir,gooseBinary:process.env.KIVOU_GOOSE_BINARY,codexCommand:process.env.KIVOU_CODEX_COMMAND,codexAcpCommand:path.resolve('node_modules/.bin/codex-acp.cmd'),timeoutMs:300_000});
+await service.initialize();const provider=await service.probeProvider();console.log(JSON.stringify(provider));
+if(!provider.ready)process.exit(1);
+const start=Date.now();const run=await service.start({workflow:'content',topic:'A calmer editing workflow',audience:'Independent short-form video editors',language:'English',text:'Make a 30-second video about keeping source footage unchanged and collecting client feedback on a specific video version. Give three hooks, one simple script, a shot list, captions and platform copy. This is an original demonstration, not client work.'});
+await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('Live test timed out.')),330_000);const off=service.subscribe(updated=>{if(updated.id===run.id&&updated.status!=='running'){clearTimeout(timer);off();if(updated.status==='completed')resolve();else reject(new Error(updated.error||updated.status));}});});
+const result=service.getRun(run.id);const evidence={at:new Date().toISOString(),id:result.id,status:result.status,provider:'Codex ChatGPT through Goose/ACP',elapsedMs:Date.now()-start,hooks:result.result.hooks.length,files:result.files,rssBytes:process.memoryUsage().rss,directory:result.directory,synthetic:false,input:'Original demonstration brief; no client material'};
+fs.mkdirSync(path.resolve('../../qa'),{recursive:true});fs.writeFileSync(path.resolve('../../qa/live-model.json'),JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));

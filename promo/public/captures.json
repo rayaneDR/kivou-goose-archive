@@ -1,0 +1,17 @@
+{
+  "provenance": "Actual Kivou Electron renderer; qa/desktop-smoke.json in the repository records the deterministic inventory check. Research and content shots are preview forms. Asset contents are synthetic fixture files.",
+  "captures": [
+    {
+      "file": "research.png",
+      "sha256": "ed9ce38b602e28a66b5d3d6356b9aecfecb01fb1c988e4f772c19a10322bd219"
+    },
+    {
+      "file": "content.png",
+      "sha256": "917211015769cb92f8deab3f6d9ac3899245c2a25c9188445806729e8e3eed70"
+    },
+    {
+      "file": "assets.png",
+      "sha256": "78a5ae63320f57e86155c6f5d1711f642cd7e3eabfb848da5f34e8cdf960c6e7"
+    }
+  ]
+}
