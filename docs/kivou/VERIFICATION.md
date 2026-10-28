@@ -53,7 +53,7 @@ The encoded video was inspected at selected frames and loaded in Microsoft Edge;
 | Final automated rerun | Completed: 24/24 passing creator tests |
 | Final packaged rerun | Completed after Research/guard fixes; provider check and deterministic workflow passed |
 | Packaged live model workflow | Completed through actual Kivou.exe: [packaged-model.json](../../qa/packaged-model.json), 50.928 seconds and 3 hooks |
-| Portable ZIP | Generated archive, SHA-256 and matching source/version manifest |
+| Portable ZIP | Completed: [release.json](../../qa/release.json), Windows archive CRC verified, SHA-256 recorded |
 | Research source verification | No independent per-URL retrieval mechanism implemented; sources remain unverified |
 | Full application resources | Whole-process-tree observation if a total-memory claim is made |
 | Public artifacts | Secret/path review and GitHub success receipts |
@@ -71,3 +71,7 @@ No full Rust test suite, successful full original desktop build, code-signing st
 [REA summary](../../qa/rea-summary.json) and [shipped-file SHA manifest](../../qa/rea-shipped-manifest.json) describe an exact extraction from the final packaged app. REA analyzed main/preload/service/guard as inert JavaScript. It observed one browser window, one bridge and ten exposed bridge members; dynamic IPC binding and runtime enforcement remain outside its static proof. It did not analyze renderer dependencies or the native Rust binary. Actual packaged tests provide separate runtime evidence.
 
 The independent visual review recommendations were implemented: heading focus on navigation, a polite progress region and asset-table semantics. Final packaged DOM assertions passed; no human screen-reader session is claimed.
+
+## Local release artifacts
+
+The Windows ZIP is 382,979,300 bytes; the full inherited-source ZIP is 322,004,905 bytes. Both were generated from the tested package/source and hashed; the Windows ZIP passed full CRC validation. Source archive commit: `861b3f1b3d2cbc5561d679fd39ce1580622fc83e`. Later documentation/evidence commits do not change the packaged implementation. The public repository and release remain uncreated until owner-operated GitHub authentication completes.

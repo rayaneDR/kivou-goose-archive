@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-28T16:20:50.528002+00:00",
+  "unitTests": {
+    "command": "node --test creator/tests/*.test.mjs",
+    "passed": 24,
+    "failed": 0,
+    "evidence": "Observed zero exit status and 24/24 TAP output after final backend changes"
+  },
+  "build": {
+    "command": "npm run build",
+    "directory": "ui/creator",
+    "passed": true
+  },
+  "packagedSmoke": "qa/desktop-smoke.json",
+  "packagedModel": "qa/packaged-model.json",
+  "researchModel": "qa/research-approve-live.json",
+  "contentModel": "qa/live-model.json",
+  "staticArtifactInspection": "qa/rea-summary.json",
+  "videoQA": "promo/QA.md",
+  "releaseManifest": "qa/release.json",
+  "productionDependencyAudit": {
+    "command": "npm audit --omit=dev --json",
+    "vulnerabilities": 0,
+    "scope": "ui/creator runtime dependencies at this checkpoint"
+  },
+  "githubPublished": false
+}

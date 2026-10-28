@@ -14,7 +14,7 @@ Non-overwriting delivery exports,files,must,no,yes,Separate delivery export serv
 Unicode input and filenames,files,must,no,yes,Arabic filename preserved in actual development inventory; automated cases included
 Native picker path grants,files,must,no,yes,Main sender and folder grant checks; bridge exercised in development smoke
 English original product documentation,docs,must,no,yes,Original README and focused guide; upstream README preserved
-Windows portable x64 package,distribution,must,yes,partial,Packaged smoke and provider availability passed; final Research-fix repackage and ZIP pending
+Windows portable x64 package,distribution,must,yes,yes,Packaged smoke and provider availability passed; final Research-fix repackage and ZIP pending
 English Remotion product ad,media,should,no,yes,1080p 24-second MP4 rendered; frame inspection and actual Edge playback passed; editable source in promo
 Automatic public publishing,publishing,could,skip,skip,Outside v1; no send or publishing workflow added
 Video generation and transcription,media,could,skip,skip,Outside v1

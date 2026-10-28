@@ -6,7 +6,7 @@ Kivou is a Windows-first AI assistant for independent creators. Research a topic
 
 Built by [rayaneDR](https://github.com/rayaneDR) as a creator-focused fork of [goose](https://github.com/aaif-goose/goose). Kivou keeps the upstream source history and Rust runtime, and adds a focused Electron/React creator interface in `ui/creator`. The inherited general-purpose desktop source is preserved separately.
 
-**Status:** Windows Electron smoke tests passed, including the packaged application. Real Content Pack and Research Brief calls completed through Goose/Codex ACP; research links remain unverified. The packaged runtime also completed a real Content Pack. A local portable ZIP is being prepared; GitHub publication still awaits authenticated repository/release access. [Verification and limits](docs/kivou/VERIFICATION.md).
+**Status:** Windows Electron smoke tests passed, including the packaged application. Real Content Pack and Research Brief calls completed through Goose/Codex ACP; research links remain unverified. The packaged runtime also completed a real Content Pack. The local Windows portable ZIP and source ZIP are ready with SHA-256 checksums. GitHub publication still awaits authenticated repository/release access. [Verification and limits](docs/kivou/VERIFICATION.md).
 
 ![Kivou creator dashboard with synthetic demonstration content](qa/dashboard.png)
 

@@ -185,4 +185,3 @@ test('Windows command shims with spaces can be probed without shell quoting erro
   const service=new CreatorService({dataDir:dir('cmd-probe'),gooseBinary:process.execPath,codexCommand:codex,codexAcpCommand:adapter});
   const status=await service.probeProvider();assert.equal(status.ready,true);assert.equal(status.adapterAvailable,true);assert.equal(status.codexLoggedIn,true);
 });
-
