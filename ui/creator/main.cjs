@@ -3,7 +3,7 @@ const path = require('node:path');
 const {pathToFileURL} = require('node:url');
 const fs = require('node:fs');
 const {execFileSync} = require('node:child_process');
-let win,service;
+let win,service,islandController;
 const chosenFolders=new Set();
 app.setName('Kivou');
 if(process.env.KIVOU_USER_DATA) app.setPath('userData',process.env.KIVOU_USER_DATA);
@@ -33,14 +33,15 @@ app.whenReady().then(async()=>{
   service=new CreatorService({dataDir:appData,gooseBinary,codexCommand,codexAcpCommand});
   await service.initialize();
   const handle=(name,fn)=>ipcMain.handle('kivou:'+name,(event,...args)=>{sender(event);return fn(...args);});
-  handle('status',()=>service.getStatus());handle('probe',()=>service.probeProvider());
+  handle('showIsland',()=>islandController?.show());
+  handle('status',()=>service.getStatus());handle('probe',async()=>{const result=await service.probeProvider();islandController?.update();return result;});
   handle('runs',()=>service.listRuns());handle('run',id=>service.getRun(id));
   handle('start',input=>{
     if(!input||typeof input!=='object')throw new Error('Invalid workflow input.');
     if(input.workflow==='assets'&&!chosenFolders.has(input.sourceDir))throw new Error('Choose the asset folder using the native folder picker.');
     return service.start(input);
   });
-  handle('cancel',id=>service.cancel(id));
+  handle('cancel',id=>service.cancel(id,'workspace-button'));
   handle('chooseFolder',async()=>{
     const selected=await dialog.showOpenDialog(win,{title:'Choose a folder to inventory',properties:['openDirectory']});
     if(selected.canceled)return null;
@@ -59,6 +60,7 @@ app.whenReady().then(async()=>{
   win.once('ready-to-show',()=>win.show());
   if(!app.isPackaged&&process.env.KIVOU_DEV_URL)await win.loadURL(process.env.KIVOU_DEV_URL);
   else await win.loadFile(path.join(__dirname,'dist','index.html'));
+  islandController=await require('./island-controller.cjs').createIsland({service,workspace:win});
 }).catch(error=>{dialog.showErrorBox('Kivou could not start',error.message);app.quit();});
 app.on('window-all-closed',()=>app.quit());
-app.on('before-quit',()=>{const id=service?.getStatus().activeRunId;if(id)void service.cancel(id);});
+app.on('before-quit',()=>{const id=service?.getStatus().activeRunId;if(id)void service.cancel(id,'application-quit');});

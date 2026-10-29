@@ -5,7 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const required = [
-  "research.png",
+  "island-compact.png",
+  "island-expanded.png",
+  "assistant.png",
   "content.png",
   "assets.png",
   "kivou-original.wav",

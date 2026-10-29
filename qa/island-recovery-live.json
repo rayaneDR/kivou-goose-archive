@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-29T01:27:58.892Z",
+  "passed": true,
+  "scope": "actual packaged Kivou.exe",
+  "realModelCalls": 2,
+  "fullQuitAndRelaunch": true,
+  "persistedParent": true,
+  "cancelledTurnPreserved": true,
+  "continuedFromLastSuccessfulTurn": true,
+  "recallVerified": true,
+  "input": "Original demonstration codeword; no client data"
+}

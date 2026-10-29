@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-29T01:19:43.325Z",
+  "passed": true,
+  "scope": "actual packaged Kivou.exe",
+  "elapsedMs": 43852,
+  "realModelCalls": 3,
+  "provider": "Goose v1.56.0 / Codex ACP / existing ChatGPT login",
+  "sameProject": true,
+  "secondTurnRecallsFirst": true,
+  "persistedAfterRendererReload": true,
+  "islandShowsActualResult": true,
+  "contentHandoff": true,
+  "directIslandMessage": true,
+  "runIds": [
+    "30a19412-e7fd-4454-8ce2-2edc804e888d",
+    "370d38e4-83cc-4b62-be41-f38a9bdd6dd1",
+    "b2c35108-9a72-43d4-b135-ef4994a4ec67"
+  ],
+  "input": "Original synthetic project brief; real model responses, no mocked answers"
+}

@@ -1,4 +1,4 @@
-export type Workflow = 'research' | 'content' | 'assets';
+export type Workflow = 'research' | 'content' | 'assets' | 'assistant';
 export type RunStatus = 'running' | 'completed' | 'cancelled' | 'failed' | 'interrupted';
 export interface CreatorInput {
   workflow: Workflow;
@@ -8,10 +8,14 @@ export interface CreatorInput {
   urls?: string[];
   language?: string;
   sourceDir?: string;
+  message?: string;
+  projectBrief?: string;
+  parentRunId?: string;
 }
 export interface CreatorResult {
   title: string;
   markdown: string;
+  nextSteps?: string[];
   reviewRequired: boolean;
   sourceStatus?: 'unverified';
   sources?: Array<{url:string; title:string; evidence:string; verification:string; provenance:'user-supplied URL'|'model-suggested URL'; retrievalStatus:'not-independently-observed'}>;
@@ -33,6 +37,7 @@ export interface CreatorRun {
   updatedAt: string;
   finishedAt?: string;
   directory: string;
+  conversationId?: string;
   input: CreatorInput;
   reviewRequired: boolean;
   files: string[];
@@ -77,5 +82,5 @@ export class CreatorService {
   exportRun(id:string,directory:string):Promise<{directory:string;files:string[]}>;
 }
 export function validateInput(input:CreatorInput):CreatorInput;
-export function validateModelResult(text:string,workflow:'research'|'content',suppliedUrls?:string[]):CreatorResult;
+export function validateModelResult(text:string,workflow:'research'|'content'|'assistant',suppliedUrls?:string[]):CreatorResult;
 export function redact(value:unknown):string;

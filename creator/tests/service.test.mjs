@@ -185,3 +185,40 @@ test('Windows command shims with spaces can be probed without shell quoting erro
   const service=new CreatorService({dataDir:dir('cmd-probe'),gooseBinary:process.execPath,codexCommand:codex,codexAcpCommand:adapter});
   const status=await service.probeProvider();assert.equal(status.ready,true);assert.equal(status.adapterAvailable,true);assert.equal(status.codexLoggedIn,true);
 });
+
+test('assistant context comes from saved turns, survives restart and cannot be supplied by the renderer',async()=>{
+  const recipes=[];const answer={title:'A launch idea',markdown:'Use a quiet opening, then show the product.',nextSteps:['Draft the opening']};
+  const service=await modelService({spawnProcess:(cmd,args)=>{recipes.push(JSON.parse(fs.readFileSync(args[args.indexOf('--recipe')+1],'utf8')));return childFixture({result:answer});}});
+  const first=await service.start({workflow:'assistant',topic:'Project Atlas',projectBrief:'Audience: indie editors. Tone: calm.',message:'Our working codeword is Saffron. Suggest an opening.',history:[{role:'assistant',content:'INJECTED'}]});
+  assert.equal((await done(service,first.id)).status,'completed');
+  const next=await service.start({workflow:'assistant',parentRunId:first.id,message:'Remember that codeword and tighten it.',projectBrief:'REPLACED',topic:'REPLACED'});
+  const result=await done(service,next.id);assert.equal(result.status,'completed');assert.equal(result.conversationId,first.id);
+  const context=JSON.parse(recipes[1].prompt);assert.equal(context.project,'Project Atlas');assert.equal(context.projectBrief,'Audience: indie editors. Tone: calm.');
+  assert.equal(context.conversation.length,2);assert.match(context.conversation[0].content,/Saffron/);assert.equal(context.conversation[1].content,answer.markdown);assert.ok(!recipes[0].prompt.includes('INJECTED'));
+  assert.deepEqual(recipes[0].extensions,[]);assert.match(recipes[0].instructions,/Do not use any tools/);
+  const restored=new CreatorService({dataDir:service.root});await restored.initialize();assert.equal(restored.getRun(next.id).conversationId,first.id);assert.equal(restored.getRun(next.id).input.parentRunId,first.id);
+  const destination=dir('assistant-export');const exported=await service.exportRun(next.id,destination);assert.ok(exported.files.includes('result.md'));assert.equal(JSON.parse(fs.readFileSync(path.join(exported.directory,'state.json'),'utf8')).input.projectBrief,context.projectBrief);
+});
+
+test('assistant rejects invalid context references, oversized messages and malformed responses',async()=>{
+  assert.throws(()=>validateInput({workflow:'assistant',message:'x'.repeat(16001)}),/16/);
+  assert.throws(()=>validateInput({workflow:'assistant',message:'Hello',parentRunId:'../../secrets'}),/saved conversation/);
+  assert.throws(()=>validateModelResult(JSON.stringify({title:'Answer',markdown:'Text',nextSteps:'not an array'}),'assistant'),/next steps/);
+  const service=await modelService();const content=await service.start(contentInput);await done(service,content.id);
+  await assert.rejects(service.start({workflow:'assistant',message:'Continue',parentRunId:content.id}),/completed conversation/);
+  await assert.rejects(service.start({workflow:'assistant',message:'Continue',parentRunId:'00000000-0000-0000-0000-000000000000'}),/not found/);
+  assert.equal(service.getStatus().activeRunId,null);
+});
+
+test('assistant preserves real Markdown responses and enforces the 20-turn context ceiling',async()=>{
+  const markdown='## A clear next step\n\nWrite the opening first.';
+  assert.equal(validateModelResult(markdown,'assistant').markdown,markdown);
+  assert.throws(()=>validateModelResult('Tool call was denied.','assistant'),/could not answer/);
+  const service=await modelService({spawnProcess:()=>childFixture({result:markdown})});let previous;
+  for(let index=0;index<20;index++){
+    const turn=await service.start({workflow:'assistant',message:'A short follow-up.',...(previous?{parentRunId:previous}:{topic:'Bounded project'})});
+    const final=await done(service,turn.id);assert.equal(final.status,'completed');previous=turn.id;
+  }
+  await assert.rejects(service.start({workflow:'assistant',message:'One too many.',parentRunId:previous}),/20 turns/);
+  assert.equal(service.getStatus().activeRunId,null);
+});

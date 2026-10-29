@@ -1,3 +1,14 @@
+# Kivou changes
+
+## 0.2.0 — 2026-10-29
+
+- Added a native always-on-top Windows island, quick notes, live run state, cancel, tray access and workspace restore.
+- Added named project conversations, saved briefs, follow-up context, Markdown answers and handoff to creator workflows.
+- Preserved island context across full restart and cancelled/failed turns; made constrained-height content scrollable.
+- Validated 29 tests, packaged deterministic workflows, three real assistant calls and two real recovery calls.
+- Updated the English Remotion introduction with native island and conversation captures.
+- The earlier 0.1 release draft was not published; it was superseded by the owner's island/agent direction.
+
 # Kivou change log
 
 ## Unreleased — initial creator distribution

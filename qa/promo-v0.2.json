@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T01:31:23.501Z",
+  "passed": true,
+  "studioLoaded": true,
+  "playback": {
+    "duration": 24,
+    "width": 1920,
+    "height": 1080,
+    "time": 1.026219,
+    "paused": false,
+    "error": null
+  },
+  "scope": "Actual Microsoft Edge playback, muted; generated audio not subjectively auditioned",
+  "captures": "Actual packaged Electron interface, original demonstration input and real model replies; synthetic inventory fixture"
+}

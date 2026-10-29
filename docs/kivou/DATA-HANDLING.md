@@ -33,3 +33,11 @@ Credential-shaped strings are redacted from persisted model output and errors as
 Screenshots, examples and product video use synthetic content. Personal paths, account details, client footage, prompts and raw private run logs do not belong in the public repository or release. The inherited goose application's broader settings and integrations are separate from the new creator workflow contract; do not assume every upstream capability has the same data boundary as Asset Manifest.
 
 There is no publishing or message-sending step in the three creator workflows. Generated copy is a draft for the user to review.
+
+## Project conversations and island continuity
+
+A consented conversation request sends the project brief, current message and earlier successful turns from that project to Codex. The service reconstructs history from its own saved run records; the renderer cannot inject an arbitrary history array. Context is limited to 20 turns and 80,000 characters. A cancelled/failed turn remains visible in records but never replaces the last successful island context.
+
+`island-state.json` stores only the last successful island run ID, alongside local run data. It is restored on restart; invalid pointers fall back to saved successful island notes. The island reads only Kivou run status/results. It does not monitor other applications, read the screen or clipboard, or import account/plugin credentials. A tray quit ends the app; no auto-start is installed.
+
+Markdown rendering skips raw HTML and remote images. Model-suggested links are displayed as text rather than automatically opening browser windows. Local exports include the chosen answer's run record and brief, not the full linked conversation history.

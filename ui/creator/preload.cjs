@@ -1,6 +1,8 @@
 const {contextBridge, ipcRenderer} = require('electron');
 const invoke = (method, ...args) => ipcRenderer.invoke('kivou:'+method, ...args);
 contextBridge.exposeInMainWorld('kivou', {
+  showIsland:()=>invoke('showIsland'),
+  onNavigate:callback=>{const listener=(_event,id)=>callback(id);ipcRenderer.on('kivou:navigate',listener);return()=>ipcRenderer.removeListener('kivou:navigate',listener);},
   status:()=>invoke('status'), probe:()=>invoke('probe'), runs:()=>invoke('runs'),
   run:(id)=>invoke('run',id), start:(input)=>invoke('start',input), cancel:(id)=>invoke('cancel',id),
   chooseFolder:()=>invoke('chooseFolder'), exportRun:(id)=>invoke('export',id), openRun:(id)=>invoke('openRun',id),

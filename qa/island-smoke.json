@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-29T01:21:26.502Z",
+  "passed": true,
+  "scope": "packaged Electron",
+  "realNativeWindows": true,
+  "modelCalled": false,
+  "widths": [
+    1440,
+    900,
+    390
+  ],
+  "checks": [
+    "Native transparent always-on-top island",
+    "Expand and Escape collapse",
+    "No model request from idle island",
+    "Sandboxed renderer",
+    "Project composer consent/provider gating",
+    "Original workflow dashboard retained",
+    "Open conversation from island",
+    "Closing workspace hides it; island restores it",
+    "No renderer errors"
+  ]
+}

@@ -6,7 +6,7 @@ const profile=path.join(qa,'private','packaged-live-'+Date.now());
 const env={...process.env,KIVOU_USER_DATA:profile,KIVOU_DATA_DIR:path.join(profile,'creator')};delete env.ELECTRON_RUN_AS_NODE;
 const app=await _electron.launch({executablePath:path.resolve('out/Kivou-win32-x64/Kivou.exe'),args:[],env,timeout:60_000});
 try{
- const page=await app.firstWindow();await page.getByRole('heading',{name:'What are we making?'}).waitFor();
+ const page=await app.firstWindow();await page.getByRole('button',{name:'My workspace',exact:true}).click();await page.getByRole('heading',{name:'What are we making?'}).waitFor();
  const provider=await page.evaluate(()=>window.kivou.probe());if(!provider.ready)throw new Error(provider.message);
  const start=Date.now();const run=await page.evaluate(()=>window.kivou.start({workflow:'content',topic:'A little order before the edit',audience:'Independent video creators',language:'English',text:'Write a 20-second creator video about making a read-only inventory of footage before starting an edit. Keep original files unchanged. This is an original demonstration, not a paid client project. Use only this supplied idea; no research is needed.'}));
  const deadline=Date.now()+300_000;

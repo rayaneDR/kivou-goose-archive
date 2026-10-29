@@ -15,7 +15,7 @@ delete env.ELECTRON_RUN_AS_NODE;
 const app=await _electron.launch({executablePath,args:process.env.KIVOU_PACKAGED_EXE?[]:[path.resolve('.')],env,timeout:60_000});
 try{
  const page=await app.firstWindow({timeout:60_000});const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.getByRole('heading',{name:'What are we making?'}).waitFor();await page.setViewportSize({width:1440,height:1000});
+ await page.getByRole('button',{name:'My workspace',exact:true}).click();await page.getByRole('heading',{name:'What are we making?'}).waitFor();await page.setViewportSize({width:1440,height:1000});
  assert.equal(await page.title(),'Kivou — Make room for your next idea');
  await page.screenshot({path:path.join(qa,'dashboard.png')});
  await page.getByRole('button',{name:/Research Brief Find the context/}).click();
@@ -36,7 +36,7 @@ try{
  await page.screenshot({path:path.join(captures,'assets.png')});
  const runs=await page.evaluate(()=>window.kivou.runs());assert.ok(runs.some(r=>r.workflow==='assets'&&r.status==='completed'));
  const saved=runs.find(r=>r.workflow==='assets'&&r.status==='completed');assert.ok(fs.existsSync(path.join(saved.directory,'result.json')));
- await page.reload();await page.getByRole('heading',{name:'What are we making?'}).waitFor();await page.getByRole('button',{name:/Original clips.*Asset Manifest/}).click();
+ await page.reload();await page.getByRole('button',{name:'My workspace',exact:true}).click();await page.getByRole('heading',{name:'What are we making?'}).waitFor();await page.getByRole('button',{name:/Original clips.*Asset Manifest/}).click();
  await page.getByText('3 files inventoried. Original files were left untouched.').waitFor();
  assert.deepEqual(Object.fromEntries(fs.readdirSync(fixture).map(n=>[n,fs.readFileSync(path.join(fixture,n),'utf8')])),before);
  const overflow=[];for(const width of [1440,900,390]){await page.setViewportSize({width,height:950});const v=await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth);assert.equal(v,true,`Overflow at ${width}`);overflow.push(width);}

@@ -1,46 +1,47 @@
 # Kivou
 
-**From a rough idea to a reviewable content pack.**
+**Your AI companion. Right where you work.**
 
-Kivou is a Windows-first AI assistant for independent creators. Research a topic, shape a short script, and prepare a delivery folder with sources, drafts and a clear run history.
+Kivou is a Windows-first assistant for independent creators: a compact island at the top of your screen, project conversations that keep their context, and practical workflows for research, content and assets.
 
-Built by [rayaneDR](https://github.com/rayaneDR) as a creator-focused fork of [goose](https://github.com/aaif-goose/goose). Kivou keeps the upstream source history and Rust runtime, and adds a focused Electron/React creator interface in `ui/creator`. The inherited general-purpose desktop source is preserved separately.
+Built by [rayaneDR](https://github.com/rayaneDR). An independent, Apache-2.0 distribution built on [Goose](https://github.com/aaif-goose/goose), with its source history and credits preserved.
 
-**Status:** Windows Electron smoke tests passed, including the packaged application. Real Content Pack and Research Brief calls completed through Goose/Codex ACP; research links remain unverified. The packaged runtime also completed a real Content Pack. The local Windows portable ZIP and source ZIP are ready with SHA-256 checksums. The public source is available in this repository. Windows release assets are being uploaded; a download is available only once the release is published. [Verification and limits](docs/kivou/VERIFICATION.md).
+[![Watch Kivou in 24 seconds](docs/media/kivou-poster.png)](docs/media/kivou-introduction.mp4)
 
-![Kivou creator dashboard with synthetic demonstration content](qa/dashboard.png)
+[Watch the English introduction](docs/media/kivou-introduction.mp4) · [Windows guide](docs/kivou/WINDOWS.md) · [Verification](docs/kivou/VERIFICATION.md)
 
-## Three ways to start
+**0.2 preview status:** the actual Windows executable passed native island checks, project conversation checks and real model calls. The source is public; release assets are being prepared for [GitHub Releases](https://github.com/rayaneDR/kivou/releases). This is an unsigned Windows x64 portable preview.
 
-| Workflow | You provide | Kivou prepares |
-| --- | --- | --- |
-| Research Brief | A topic, audience and optional links | A draft brief, unverified source suggestions and explicit uncertainties |
-| Content Pack | An idea or text transcript | Three hooks, a script, shot list, caption suggestions and platform copy |
-| Asset Manifest | A folder you select | A metadata inventory and proposed file names; originals stay in place |
+## A little presence. A useful next step.
 
-Each run gets its own folder. Markdown is easy to review; JSON keeps the structured result portable. Cancelled and interrupted runs retain their recorded state. Export creates a new delivery folder rather than replacing an earlier export.
+- **Desktop island:** expand a compact top-screen companion, ask a quick question, follow the actual run state, stop work or return to your workspace. `Ctrl + Alt + K` toggles it when the shortcut is available; the workspace and tray provide the same access.
+- **Project conversations:** save a project brief, ask follow-up questions with the earlier context, reopen your work, and export an answer. Island notes survive a full restart and keep the last successful context after an interrupted or cancelled turn.
+- **Research Brief:** prepare a draft with source suggestions and explicit uncertainties. Source links remain unverified until you review them.
+- **Content Pack:** turn supplied text into three hooks, a short script, shot list, captions and platform copy. A conversation answer can be handed straight into the workflow.
+- **Asset Manifest:** inventory filenames and sizes and propose organization. Original files stay where they are.
 
-## Bring your model access
-
-The initial integration uses the installed Codex CLI through goose's `codex-acp` provider. Sign in through the normal Codex flow with your own eligible ChatGPT account. Your account's usage limits still apply; this is not unlimited or bundled inference. There is no automatic switch to a paid API provider.
-
-Provider checks establish that executables and login are available. Only a successful real workflow establishes model compatibility. [goose ACP provider documentation](https://goose-docs.ai/docs/guides/acp-providers/) · [OpenAI authentication documentation](https://learn.chatgpt.com/docs/auth)
-
-## Local files, reviewable results
-
-- App data and exports are local. Prompts, supplied text and selected research links go to the configured model provider during AI runs.
-- An Asset Manifest inventories names and metadata, without reading file contents or moving, renaming or deleting originals.
-- Research links are model-reported evidence that needs human review. A citation is not independent verification of a claim.
-- Content Pack does not generate video, transcribe audio, publish posts or send messages.
-- The app does not import the credentials, connected plugins or permissions of the chat in which it was developed.
-
-Read [data handling](docs/kivou/DATA-HANDLING.md) for storage, exports and execution boundaries.
+![Actual Kivou project conversation; original demonstration brief and real model responses](qa/assistant-conversation-viewport.png)
 
 ## Get started on Windows
 
-The public source repository is [rayaneDR/kivou](https://github.com/rayaneDR/kivou), on the `kivou` default branch. The Windows x64 portable ZIP has passed packaged smoke and real-model checks. Release assets are uploading; check [Releases](https://github.com/rayaneDR/kivou/releases) for published downloads.
+1. Download the portable ZIP from a published [release](https://github.com/rayaneDR/kivou/releases) and check its attached SHA-256 file.
+2. Extract the whole folder and open `Kivou.exe`.
+3. For AI conversations and drafting, install **Node.js 24+** and the **Codex CLI**, then sign in to Codex with your own eligible ChatGPT account. Check the connection in Kivou.
+4. Ask from the island, start a project conversation, or choose a creator workflow.
 
-For development, use Node.js 24+ and an installed Codex CLI signed in with ChatGPT. From the repository root, prepare the pinned Windows Goose v1.56.0 runtime, then build and start the focused creator app:
+Closing the workspace keeps Kivou available in the system tray. Use the tray's **Quit Kivou** command to exit. There is no auto-start installation.
+
+Your model account's limits apply. There is no automatic paid API fallback. Asset Manifest works without a model. Kivou does not import credentials or connected plugins from the chat in which it was developed.
+
+## Local work, explicit model access
+
+Project briefs and conversation context are sent to the connected model only when you allow a message or workflow. Run records and Markdown/JSON exports stay local. The island does not read your screen, clipboard or unrelated files.
+
+General conversation provides advice and drafts; it does not execute commands, operate other apps, publish or send messages. Live research is a separate workflow. Conversations are bounded to 20 turns and 80,000 characters of context; start a new project with a summary at the limit. [Data handling](docs/kivou/DATA-HANDLING.md).
+
+## Development
+
+Use Node.js 24+ and an installed Codex CLI signed in with ChatGPT. Prepare the pinned Windows runtime, then run the focused application:
 
 ```powershell
 .\scripts\prepare-kivou-runtime.ps1
@@ -50,37 +51,25 @@ npm run build
 npm start
 ```
 
-The ACP adapter is a locked application dependency. [The Windows guide](docs/kivou/WINDOWS.md) covers the backend download, Electron setup, connection checks and packaging. `npm run package:windows` prepares the Windows app directory; its creation alone is not a launch test or public release.
+`npm run package:windows` creates the portable application directory. Packaging alone is not verification: see [the Windows guide](docs/kivou/WINDOWS.md) for smoke checks and real-model checks.
 
-[Windows guide](docs/kivou/WINDOWS.md) · [creator service integration](creator/README.md) · [architecture](replica/architecture.md)
+The runtime is pinned to Goose **v1.56.0**, commit `9949cf926cd42f1d128b9991ed23a496ecace896`. The inherited Rust source and original desktop remain in the repository; Kivou's entry point is `ui/creator`. [Original source instructions](README.upstream.md) · [Architecture](replica/architecture.md).
 
-This fork starts from goose **v1.56.0**, commit `9949cf926cd42f1d128b9991ed23a496ecace896`. The unchanged Rust backend is supplied by the official pinned Windows artifact; a local Rust build is not required for this distribution path. The original desktop/source instructions remain in [README.upstream.md](README.upstream.md) and [the upstream desktop guide](ui/desktop/README.md).
+## What Kivou adds
 
-## What is ours, what is inherited
-
-| Inherited from goose | Kivou additions |
+| Inherited from Goose | Kivou implementation |
 | --- | --- |
-| Rust agent and CLI | Three creator workflows |
-| Preserved general-purpose desktop source | Focused Electron/React creator application |
-| ACP provider and MCP infrastructure | Isolated run records and non-overwriting delivery exports |
-| Existing session and provider capabilities | Metadata-only asset manifests and a focused Windows guide |
+| Rust agent runtime and CLI | Native Windows island, tray and workspace lifecycle |
+| ACP provider support | Saved project conversations and consented quick notes |
+| Original general-purpose desktop source | Focused English creator workspace |
+| Existing agent infrastructure | Three creator workflows, isolated records and separate exports |
 
-See the [feature matrix](replica/features.csv) for implementation status and the [change log](CHANGELOG-KIVOU.md) for the fork's changes. An inherited capability is not a new Kivou invention.
+The island interaction was informed by the public behavior of [Coucou](https://github.com/Louis-CFM/coucou). Kivou uses its own geometric K, interface code, colors and audio; no Coucou character, artwork, sounds or source were copied. This preview does not claim complete Goose or Coucou feature parity.
 
-## Demo and contribution
+[Feature matrix](replica/features.csv) · [Change log](CHANGELOG-KIVOU.md) · [Test evidence](qa/checks.json) · [Editable Remotion video](promo/README.md)
 
-The **24-second English introduction** was made in Remotion using actual application captures and original synthesized audio. It is 1080p at 30 fps, with verified playback. Research/Content shots are clearly labelled preview forms; Asset Manifest shows actual local inventory of synthetic sample files.
+## Contributing and license
 
-[![Watch the Kivou introduction](docs/media/kivou-poster.png)](docs/media/kivou-introduction.mp4)
+Useful contributions include reproducible Windows bug reports, accessible interaction improvements and tests for cancellation, context recovery or exports. Remove private paths, secrets and content from reports. Kivou's CI is manually triggered; no automatic publishing workflow is enabled.
 
-[Watch/download MP4](docs/media/kivou-introduction.mp4) · [Editable Remotion source](promo/README.md) · [Video verification](promo/QA.md)
-
-Inherited GitHub automation is preserved in `.github/upstream-workflows`; Kivou's own CI is manually triggered. No automatic release or publishing job is enabled.
-
-Useful contributions include a reproducible Windows bug report, an improvement to a creator workflow, and tests for export or cancellation behavior. Describe the expected and observed results, your application version and whether a real provider or test fixture was used. Remove private paths, tokens and content before attaching logs.
-
-## License and credits
-
-[Apache License 2.0](LICENSE). This repository retains goose's history and copyright notices. Kivou is an independent distribution and is not endorsed by the goose maintainers or the Agentic AI Foundation. The name and new presentation do not change ownership of upstream work.
-
-The initial Kivou work is by rayaneDR. Upstream contributors and their notices remain credited in the source history and preserved files.
+[Apache License 2.0](LICENSE). Upstream history and copyright notices are preserved. Kivou is independent and is not endorsed by Goose maintainers or the Agentic AI Foundation.

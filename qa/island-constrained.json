@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-29T01:28:54.808Z",
+  "passed": true,
+  "scope": "actual packaged app with synthetic work-area and long-content fixtures",
+  "workAreaHeight": 480,
+  "nativeHeight": 456,
+  "scrollable": true,
+  "footerReached": true,
+  "hideControlWorked": true,
+  "modelCalled": false
+}

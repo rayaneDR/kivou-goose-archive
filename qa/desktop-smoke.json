@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-28T16:03:26.225Z",
+  "at": "2026-10-29T01:21:34.399Z",
   "passed": true,
   "scope": "packaged app",
   "memory": {
-    "workingSetKB": 554524,
-    "peakWorkingSetKB": 575496,
+    "workingSetKB": 543500,
+    "peakWorkingSetKB": 564000,
     "scope": "Electron app processes during deterministic workflow; no active model process"
   },
   "providerAvailable": true,
@@ -17,10 +17,7 @@
     "Original files unchanged",
     "Result persisted after renderer reload",
     "No renderer errors",
-    "No horizontal overflow at 1440/900/390",
-    "Heading focus follows view navigation",
-    "Asset table has semantic column headers",
-    "Polite workflow status live region exists"
+    "No horizontal overflow at 1440/900/390"
   ],
   "fixtures": "Synthetic file contents; real deterministic inventory and Electron IPC; no AI response mocked"
 }

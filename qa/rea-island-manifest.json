@@ -1,0 +1,62 @@
+{
+  "product": "Kivou",
+  "version": "0.2.0",
+  "sourceMatchesPackaged": true,
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 986,
+      "sha256": "7edd9b57cbd06410be0aab47caae8f83e9897b5b67b933c031c24c200f2993bd"
+    },
+    {
+      "path": "main.cjs",
+      "bytes": 4967,
+      "sha256": "f7ac5bc044541fbaeeaa6b68a1a404e043c20d9464c0a4da8f233413012e602d"
+    },
+    {
+      "path": "preload.cjs",
+      "bytes": 882,
+      "sha256": "c12bd8389ab26858a1b4a9b340e5c2407b343ccec6f330c538b22b6843d8a0e1"
+    },
+    {
+      "path": "service.mjs",
+      "bytes": 33746,
+      "sha256": "e83348e2f66e63f22fabecabad127350eb016668480777610adefdde1f20efe5"
+    },
+    {
+      "path": "codex-guard.mjs",
+      "bytes": 5742,
+      "sha256": "24cd52b2a28779d9d91c846c065e915d6fc094b962090f2952773e8a81ffeccd"
+    },
+    {
+      "path": "island-controller.cjs",
+      "bytes": 4866,
+      "sha256": "94848fd37adb84fdb9a29a2c9179b691ff682d3d2ee0c8a824b13a20fbd07665"
+    },
+    {
+      "path": "island-preload.cjs",
+      "bytes": 774,
+      "sha256": "dbb1876482410833b6c8339b68e49fb34bd7f5a15acb6d18c95bf0f70046f1b8"
+    },
+    {
+      "path": "island-state.cjs",
+      "bytes": 1088,
+      "sha256": "4b4efccf7f2d6b2c5f79d58c08b752d715e1b2e99afe8794a21a3b2c14a37f8f"
+    },
+    {
+      "path": "island.js",
+      "bytes": 2615,
+      "sha256": "3da114d6bfa8b7e508a13346f208555d3ca45151c1282f7d96c06cddc989b027"
+    },
+    {
+      "path": "island.html",
+      "bytes": 2318,
+      "sha256": "6e118ee151b71c34b64351a9a7fd14a73da9d9b72d951ecf1d6fdeed8197cb0b"
+    },
+    {
+      "path": "island.css",
+      "bytes": 4593,
+      "sha256": "62131a01829ae095cec72316031cd1ddbb01b5e99ea773ed0a8109cef7d4a4c8"
+    }
+  ]
+}

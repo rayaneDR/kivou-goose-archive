@@ -1,17 +1,27 @@
 {
-  "provenance": "Actual Kivou Electron renderer; qa/desktop-smoke.json in the repository records the deterministic inventory check. Research and content shots are preview forms. Asset contents are synthetic fixture files.",
+  "version": "0.2.0",
+  "provenance": "Actual packaged Kivou Electron captures. Native island capturePage with frame settle; saved conversation uses original demonstration input and real Codex answers. Asset contents are synthetic fixtures.",
+  "evidence": [
+    "qa/island-smoke.json",
+    "qa/assistant-live.json",
+    "qa/desktop-smoke.json"
+  ],
   "captures": [
     {
-      "file": "research.png",
-      "sha256": "ed9ce38b602e28a66b5d3d6356b9aecfecb01fb1c988e4f772c19a10322bd219"
+      "file": "island-compact.png",
+      "sha256": "b8345bc1c0198c38663866465c2e24d2441265cdd98d2dd1788a71d2fdd068b2"
     },
     {
-      "file": "content.png",
-      "sha256": "917211015769cb92f8deab3f6d9ac3899245c2a25c9188445806729e8e3eed70"
+      "file": "island-expanded.png",
+      "sha256": "4071b4ce9ce1a17c9248a775b453c72e5067b20ace29869aeb94d71fd8097d49"
+    },
+    {
+      "file": "assistant.png",
+      "sha256": "9273af07defe9d0ca0f24d60cd6cd0779fe28a4f78e90f98e3011ca2f5955f9d"
     },
     {
       "file": "assets.png",
-      "sha256": "78a5ae63320f57e86155c6f5d1711f642cd7e3eabfb848da5f34e8cdf960c6e7"
+      "sha256": "4764db048492aad62d7efadb566b2fabb45128d098cdd8a3970f1efae953292c"
     }
   ]
 }

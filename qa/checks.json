@@ -1,10 +1,10 @@
 {
-  "recordedAt": "2026-10-28T16:20:50.528002+00:00",
+  "recordedAt": "2026-10-29T01:35:16.011373+00:00",
+  "version": "0.2.0",
   "unitTests": {
     "command": "node --test creator/tests/*.test.mjs",
-    "passed": 24,
-    "failed": 0,
-    "evidence": "Observed zero exit status and 24/24 TAP output after final backend changes"
+    "passed": 29,
+    "failed": 0
   },
   "build": {
     "command": "npm run build",
@@ -12,16 +12,18 @@
     "passed": true
   },
   "packagedSmoke": "qa/desktop-smoke.json",
-  "packagedModel": "qa/packaged-model.json",
-  "researchModel": "qa/research-approve-live.json",
-  "contentModel": "qa/live-model.json",
-  "staticArtifactInspection": "qa/rea-summary.json",
-  "videoQA": "promo/QA.md",
-  "releaseManifest": "qa/release.json",
+  "islandSmoke": "qa/island-smoke.json",
+  "assistantModel": "qa/assistant-live.json",
+  "islandRecoveryModel": "qa/island-recovery-live.json",
+  "constrainedIsland": "qa/island-constrained.json",
+  "independentReview": "qa/island-finish-review.md",
+  "designDocumentation": "qa/island-design-documentation.md",
+  "staticArtifactInspection": "qa/rea-island-summary.json",
+  "videoQA": "qa/promo-v0.2.json",
   "productionDependencyAudit": {
-    "command": "npm audit --omit=dev --json",
     "vulnerabilities": 0,
     "scope": "ui/creator runtime dependencies at this checkpoint"
   },
-  "githubPublished": false
+  "sourceRepositoryPublic": true,
+  "releasePublished": false
 }

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Windows x64 is the tested target. TypeScript/Vite and development/packaged Electron smoke tests have passed. The final portable ZIP was packaged and verified after the Research-mode fix. The public source is [rayaneDR/kivou](https://github.com/rayaneDR/kivou); release assets are uploading and are not yet a verified public download. [Verification record](VERIFICATION.md).
+Windows x64 is the tested target. Kivou 0.2 adds the native island and saved project conversations. The focused build, packaged lifecycle checks, real conversation calls and full-process recovery checks passed. Source is public at [rayaneDR/kivou](https://github.com/rayaneDR/kivou). See [Verification](VERIFICATION.md) and published [Releases](https://github.com/rayaneDR/kivou/releases) for download status.
 
 ## Requirements
 
@@ -92,3 +92,13 @@ The full original `ui/desktop` workspace remains preserved, but its dependency i
 | Export fails | Choose a writable destination; earlier exports are not replaced |
 
 [Data handling](DATA-HANDLING.md) · [Provider/isolation evidence](../../creator/ISOLATION.md) · [Verification](VERIFICATION.md)
+
+## Island and project conversations
+
+`Ctrl + Alt + K` toggles the island if Windows grants the shortcut. If another app owns it, use **Show island** in the workspace or tray. The compact island starts without taking focus. Expand it to ask a consented quick question, inspect real run state, cancel or continue in the workspace. Escape collapses it. The expanded body scrolls on a constrained display.
+
+Island notes keep the last successful context after a full restart, cancellation or failure. Closing the workspace hides it and leaves the tray/island available; **Quit Kivou** in the tray exits. No auto-start is installed.
+
+Project conversations have a name and optional brief. The connected model receives that project's prior messages when you allow a follow-up. General chat does not use tools. Use the explicit creator workflows for research or structured content. At 20 turns or 80,000 characters of context, start another project with a summary. Model login and usage limits remain the user's responsibility.
+
+The portable package includes the ACP adapter. Its unused bundled optional Codex native binary is excluded: Kivou requires your separately installed, signed-in Codex CLI and always routes it through its isolation guard. Actual packaged model calls validated that path.

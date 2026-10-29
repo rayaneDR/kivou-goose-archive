@@ -106,10 +106,21 @@ const Opening = () => {
           }),
         }}
       >
-        An AI workspace for creators.
+        An AI companion for creators.
       </Interactive.Div>
     </AbsoluteFill>
   );
+};
+
+const IslandScene = () => {
+ const frame=useCurrentFrame();const {fps}=useVideoConfig();
+ return <AbsoluteFill style={{backgroundColor:"#f4f1e8",color:"#21231f"}}>
+  <Interactive.Div name="Island headline" style={{position:"absolute",left:120,top:290,width:730,fontSize:112,lineHeight:1.05,letterSpacing:"-0.035em"}}>Your assistant.<br/>Right here.</Interactive.Div>
+  <Interactive.Div name="Island supporting copy" style={{position:"absolute",left:125,top:590,width:660,fontSize:41,lineHeight:1.35,color:"#55594f"}}>A thought. A quick reply.<br/>Back to the work you love.</Interactive.Div>
+  <Interactive.Div name="Compact native island" style={{position:"absolute",left:1100,top:140,width:580,opacity:interpolate(frame,[0.8*fps,1.05*fps],[1,0],{extrapolateLeft:"clamp",extrapolateRight:"clamp"})}}><CanvasImage src={staticFile("island-compact.png")} style={{width:"100%"}}/></Interactive.Div>
+  <Interactive.Div name="Expanded native island" style={{position:"absolute",left:1080,top:120,width:620,height:830,opacity:interpolate(frame,[0.8*fps,1.15*fps],[0,1],{extrapolateLeft:"clamp",extrapolateRight:"clamp"}),translate:interpolate(frame,[0.8*fps,1.4*fps],["0px -18px","0px 0px"],{extrapolateLeft:"clamp",extrapolateRight:"clamp",easing:Easing.bezier(0.23,1,0.32,1)})}}><CanvasImage src={staticFile("island-expanded.png")} style={{width:"100%",height:"100%",objectFit:"contain"}}/></Interactive.Div>
+  <Interactive.Div name="Actual island capture note" style={{position:"absolute",left:125,bottom:110,fontSize:29,color:"#55594f"}}>Native Windows app · Actual interface captures</Interactive.Div>
+ </AbsoluteFill>;
 };
 
 const WorkflowScene = ({
@@ -388,45 +399,32 @@ export const KivouAd = ({ capturesReady }: Props) => {
           <Opening />
         </Sequence>
         <Sequence
-          name="Research Brief"
+          name="Native Windows island"
           from={3.5 * fps}
           durationInFrames={4.5 * fps}
         >
-          <WorkflowScene
-            file="research.png"
-            capturesReady={capturesReady}
-            title={
-              <>
-                Research
-                <br />
-                with context.
-              </>
-            }
-            detail="Keep sources and open questions together."
-            label="Research Brief"
-            note="Preview form · Connect your model to run"
-          />
+          <IslandScene />
         </Sequence>
-        <Sequence name="Content Pack" from={8 * fps} durationInFrames={5 * fps}>
+        <Sequence name="Project conversation" from={8 * fps} durationInFrames={5 * fps}>
           <WorkflowScene
-            file="content.png"
+            file="assistant.png"
             capturesReady={capturesReady}
             title={
               <>
-                Make the
+                Keep the
                 <br />
-                idea usable.
+                context.
               </>
             }
             detail={
               <>
-                Hooks. Script.
+                Project context.
                 <br />
-                Shot list. Captions.
+                Real follow-ups.
               </>
             }
-            label="Content Pack"
-            note="Preview form · Connect your model to run"
+            label="Project conversations"
+            note="Original demo brief · Real model responses"
             tint
           />
         </Sequence>

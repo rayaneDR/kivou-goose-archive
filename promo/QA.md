@@ -27,3 +27,7 @@
 - SHA-256: `020118aef84958413daade729f4334c4172ee5f07a5be34e5bf275249367d6d7`.
 - `public/captures.json` records the source captures currently in the repository. Fixture timestamps/run IDs were recaptured during work; the MP4 uses a sanitized capture from that same real renderer, not a claim of bit-for-bit reproducibility of changing fixture IDs.
 - No GitHub/YouTube publication was performed by the promo task.
+
+## v0.2 island edit — 2026-10-29
+
+The current MP4 supersedes the historical v0.1 artifact above. It shows actual native compact/expanded island captures, an actual saved project conversation with real model replies, and actual deterministic inventory over synthetic files. Research/Content preview form scenes were replaced. `npm run lint` passed before the final scene-label-only correction. Frame 180 was rendered and visually inspected; all text and screenshot bounds fit. Microsoft Edge loaded Studio and played the encoded MP4 beyond one second with no error: [receipt](../qa/promo-v0.2.json). FFprobe reports 24.000 seconds, 1920×1080, 30fps, H.264/AAC stereo 48kHz. Current size: 4628407 bytes; SHA-256: `9b4ec27ee6ee7e38fb1a207ce27e3667698358bac825abde25e5cafc0f81bf02`. PNG capture origins are embedded; provenance scan found zero missing records across promo/public and docs/media.

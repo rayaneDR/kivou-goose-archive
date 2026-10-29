@@ -1,9 +1,9 @@
 # Kivou introduction
 
-[Watch the 24-second product introduction](kivou-introduction.mp4).
+[Watch the 24-second English introduction](kivou-introduction.mp4).
 
-![Kivou: good ideas deserve a clear next step](kivou-poster.png)
+![Kivou native island](kivou-poster.png)
 
-1920 × 1080, 30 fps, H.264/AAC. The English edit uses actual Kivou application captures, original motion design, and original synthesized audio. Research/Content captures are preview forms; Asset Manifest uses demonstration files with real local inventory. No client data or completed AI results are implied.
+1920 × 1080, 30 fps, H.264/AAC. The v0.2 edit shows the native Windows island, saved project conversations and Asset Manifest. Interface captures are real; model replies came from the actual Codex connection using an original demonstration brief. Inventory files are synthetic. Original motion design and synthesized audio.
 
-Editable source, storyboard and verification are in [`../../promo/`](../../promo/). Checksum: [`kivou-introduction.sha256`](kivou-introduction.sha256).
+[Editable Remotion source](../../promo/) · [Playback evidence](../../qa/promo-v0.2.json) · [SHA-256](kivou-introduction.sha256).

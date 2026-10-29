@@ -19,3 +19,7 @@ English Remotion product ad,media,should,no,yes,1080p 24-second MP4 rendered; fr
 Automatic public publishing,publishing,could,skip,skip,Outside v1; no send or publishing workflow added
 Video generation and transcription,media,could,skip,skip,Outside v1
 macOS and Linux support claim,distribution,could,skip,skip,Upstream supports other systems; this distribution has not tested them
+Native Windows island,desktop,must,no,yes,Actual packaged lifecycle and constrained-height scrolling verified
+Saved project conversations,assistant,must,no,yes,Actual packaged two-turn context recall and content handoff
+Direct island messages,assistant,must,no,yes,Actual packaged real model response from island
+Durable island context,assistant,must,no,yes,Full quit/relaunch and cancelled-turn recovery verified with real model

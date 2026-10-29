@@ -62,3 +62,9 @@ The implemented local service defines `CreatorInput`, `CreatorRun`, `CreatorResu
 Out of scope: media generation, transcription, billing, hosted accounts, social publishing, unattended external actions, a multi-agent team UI and support claims for untested operating systems. No upstream brand assets are promoted as a new Kivou identity.
 
 Size: M, a focused fork customization. Screenshots, actual Content Pack/Research calls, packaged smoke and a verified 24-second Remotion video now exist. Final repackage, ZIP and GitHub publication remain to finish. Existing evidence does not establish market demand or an exhaustive feature match to upstream.
+
+## Island reference — 2026-10-29
+
+Official public behavior references: [Coucou](https://github.com/Louis-CFM/coucou) and [Windows guide](https://github.com/Louis-CFM/coucou/blob/main/windows/README.md). Coucou provides an always-on-top island for agent status, interaction and chat. Its character, icon, sounds and media have separate asset restrictions. Kivou copies none of those assets or source: our independent Electron island uses the existing Kivou geometric K, palette and application service. This is a behavior study, not a claim of Coucou feature parity.
+
+New screens: S08 project conversation and context rail; S09 compact island; S10 expanded island with live state and quick note. New flow F06: message → saved project turn → follow-up with server-owned context → content handoff/export. New flow F07: top-screen island → expand → consented quick message → real run state → answer preview → workspace continuation.
