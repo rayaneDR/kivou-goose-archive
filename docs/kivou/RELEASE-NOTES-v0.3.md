@@ -10,8 +10,8 @@ The creator workflows remain available: Research Brief, Content Pack and metadat
 
 ## Install
 
-1. Download `Kivou-v0.3.0-windows-x64.zip` and verify it against `SHA256SUMS-v0.3.0.txt`.
-2. Extract the whole folder and open `Kivou.exe`.
+1. Download `Kivou.exe` and verify it against `SHA256SUMS-v0.3.0.txt`.
+2. Open `Kivou.exe`. It extracts its bundled runtime into a temporary directory; the first launch can take about a minute on a slower PC.
 3. AI work requires Node.js 24+ and your separately installed Codex CLI signed in with an eligible ChatGPT account. The ACP adapter is bundled. Your account limits apply; no paid API fallback is enabled.
 4. Use the island, or open a project conversation. `Ctrl + Alt + K` toggles the island when the shortcut is available. Workspace/tray controls are also provided.
 
@@ -23,6 +23,6 @@ Closing the workspace hides it; use tray > Quit Kivou to exit. Asset Manifest wo
 
 General conversation is advice/drafting without tools. Research source suggestions remain unverified. There is no automatic app operation, posting or messaging. No full Goose/Coucou parity claim is made.
 
-The attached 24-second English introduction shows the native island, real project conversation and Playbooks/brand interface, with original demonstration input and original audio. Editable Remotion source is in `promo/`.
+The inline README 24-second English introduction shows the native island, real project conversation and Playbooks/brand interface, with original demonstration input and original audio. Editable Remotion source is in `promo/`.
 
 Kivou is an independent Apache-2.0 distribution built on Goose v1.56.0. Original history, license and notices remain. Full source is available in the repository and GitHub's source archives for this release tag.

@@ -1,0 +1,7 @@
+{
+  "gooseVersion": "1.56.0",
+  "upstreamCommit": "9949cf926cd42f1d128b9991ed23a496ecace896",
+  "gooseBinarySha256": "1451cc5c731250b266926d4351290a3f9934c142117e7b668e16b6245c4aa09a",
+  "electronVersion": "43.4.0",
+  "electronBuilderVersion": "26.18.0"
+}

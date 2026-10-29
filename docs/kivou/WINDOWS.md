@@ -60,7 +60,7 @@ The packaging script requires `KIVOU_GOOSE_BINARY`, checks its version and copie
 
 The packaged Windows smoke test passed native folder IPC, deterministic inventory, provider availability, reload persistence and Unicode handling. After any final runtime changes, rerun that test before creating the ZIP and SHA-256. A standalone live AI call is not presented as a complete live-model cycle through the packaged UI. No macOS or Linux release claim is made by this Windows build.
 
-When a verified release is published, download its ZIP and checksum from [the release page](https://github.com/rayaneDR/kivou/releases), verify with `Get-FileHash -Algorithm SHA256 -LiteralPath 'C:\\path\\to\\download.zip'`, extract the whole folder, and keep the executable, resources and DLLs together.
+Download the single-file `Kivou.exe` and checksum from [the release page](https://github.com/rayaneDR/kivou/releases). Check it with `Get-FileHash -Algorithm SHA256 -LiteralPath 'C:\path\to\Kivou.exe'`, then open it. No installation is required: its bundled runtime extracts automatically into a temporary directory. First launch took about 69 seconds on the development PC; other machines will vary. Quit an existing preview from its tray before opening a newer one.
 
 ## Checks for contributors
 

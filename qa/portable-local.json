@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-29T02:56:02.721Z",
+  "passed": true,
+  "format": "Single-file NSIS portable EXE",
+  "artifact": "Kivou.exe",
+  "artifactBytes": 214475214,
+  "selfExtractionLaunched": true,
+  "launchMs": 68839,
+  "libraryReady": true,
+  "providerReady": true,
+  "realModelCalls": 1,
+  "modelRunCompleted": true,
+  "status": "completed",
+  "input": "Original one-line greeting request; no client material",
+  "scope": "Actual self-contained Kivou.exe, isolated test profile; user running preview untouched"
+}

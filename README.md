@@ -29,8 +29,8 @@ https://github.com/user-attachments/assets/1dcc4d41-a407-4ac0-8808-9448d236d6c7
 
 ## Get started on Windows
 
-1. Download the portable ZIP from a published [release](https://github.com/rayaneDR/kivou/releases) and check its attached SHA-256 file.
-2. Extract the whole folder and open `Kivou.exe`.
+1. Download the single-file `Kivou.exe` from a published [release](https://github.com/rayaneDR/kivou/releases) and check its attached SHA-256 file.
+2. Open `Kivou.exe`; its bundled runtime extracts automatically. The first launch may take about a minute on a slower PC.
 3. For AI conversations and drafting, install **Node.js 24+** and the **Codex CLI**, then sign in to Codex with your own eligible ChatGPT account. Check the connection in Kivou.
 4. Ask from the island, start a project conversation, or choose a creator workflow.
 
