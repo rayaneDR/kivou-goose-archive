@@ -8,7 +8,7 @@ Built by [rayaneDR](https://github.com/rayaneDR). An independent, Apache-2.0 dis
 
 [![Watch Kivou in 24 seconds](docs/media/kivou-poster.png)](docs/media/kivou-introduction.mp4)
 
-[Watch the English introduction](docs/media/kivou-introduction.mp4) · [Windows guide](docs/kivou/WINDOWS.md) · [Verification](docs/kivou/VERIFICATION.md)
+[Watch Kivou in action — 24-second English demo](docs/media/kivou-introduction.mp4) · [Windows guide](docs/kivou/WINDOWS.md) · [Verification](docs/kivou/VERIFICATION.md)
 
 **0.3 preview status:** the actual Windows executable passed native island checks, project conversation checks and real model calls. The source is public; release assets are being prepared for [GitHub Releases](https://github.com/rayaneDR/kivou/releases). This is an unsigned Windows x64 portable preview.
 
