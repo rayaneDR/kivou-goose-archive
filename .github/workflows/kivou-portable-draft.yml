@@ -32,8 +32,8 @@ jobs:
         run: |
           . ./scripts/prepare-kivou-runtime.ps1
           $pins = Get-Content qa/runtime-pins.json -Raw | ConvertFrom-Json
-          $actual = (Get-FileHash -LiteralPath $env:KIVOU_GOOSE_BINARY -Algorithm SHA256).Hash.ToLowerInvariant()
-          if ($actual -ne $pins.gooseBinarySha256) { throw 'Pinned Goose runtime digest mismatch.' }
+          $actual = (Get-FileHash -LiteralPath ui/creator/.runtime/goose-v1.56.0-windows.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actual -ne $pins.gooseArchiveSha256) { throw 'Pinned Goose runtime digest mismatch.' }
           "KIVOU_GOOSE_BINARY=$env:KIVOU_GOOSE_BINARY" >> $env:GITHUB_ENV
       - name: Install and build the focused application
         working-directory: ui/creator
