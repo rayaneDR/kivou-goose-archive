@@ -6,10 +6,15 @@
   "intendedDefaultBranch": "kivou",
   "intendedReleaseTag": "kivou-v0.1.0",
   "releaseNotes": "docs/kivou/RELEASE-NOTES.md",
-  "publicationStatus": "awaiting-owner-GitHub-CLI-authentication",
-  "repositoryVerifiedPresent": false,
+  "publicationStatus": "source-published-release-assets-uploading",
+  "repositoryVerifiedPresent": true,
   "releaseUrl": null,
   "authorization": "User approved implementation, public fork and release, then explicitly confirmed rayaneDR/kivou. No extra publication approval is requested; account authentication remains owner-operated.",
   "blockedBrowserAttempt": "Windows Computer Use stopped because it could not determine the browser URL with enough confidence to enforce policy. No further browser input was attempted in that turn.",
-  "accessState": "Connected GitHub tools can modify existing repositories but lack repository/fork creation and release asset upload. Portable official GitHub CLI prepared; device login requested through the official GitHub page."
+  "accessState": "Owner completed official GitHub CLI device authentication. Public fork and default branch verified through GitHub API. Release remains draft during asset upload.",
+  "repositoryUrl": "https://github.com/rayaneDR/kivou",
+  "verifiedAccount": "rayaneDR",
+  "defaultBranch": "kivou",
+  "publishedSourceCommit": "dae2c72a6",
+  "verifiedAt": "2026-10-29T00:58:26.267603+00:00"
 }

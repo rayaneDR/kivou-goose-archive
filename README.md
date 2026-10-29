@@ -6,7 +6,7 @@ Kivou is a Windows-first AI assistant for independent creators. Research a topic
 
 Built by [rayaneDR](https://github.com/rayaneDR) as a creator-focused fork of [goose](https://github.com/aaif-goose/goose). Kivou keeps the upstream source history and Rust runtime, and adds a focused Electron/React creator interface in `ui/creator`. The inherited general-purpose desktop source is preserved separately.
 
-**Status:** Windows Electron smoke tests passed, including the packaged application. Real Content Pack and Research Brief calls completed through Goose/Codex ACP; research links remain unverified. The packaged runtime also completed a real Content Pack. The local Windows portable ZIP and source ZIP are ready with SHA-256 checksums. GitHub publication still awaits authenticated repository/release access. [Verification and limits](docs/kivou/VERIFICATION.md).
+**Status:** Windows Electron smoke tests passed, including the packaged application. Real Content Pack and Research Brief calls completed through Goose/Codex ACP; research links remain unverified. The packaged runtime also completed a real Content Pack. The local Windows portable ZIP and source ZIP are ready with SHA-256 checksums. The public source is available in this repository. Windows release assets are being uploaded; a download is available only once the release is published. [Verification and limits](docs/kivou/VERIFICATION.md).
 
 ![Kivou creator dashboard with synthetic demonstration content](qa/dashboard.png)
 
@@ -38,7 +38,7 @@ Read [data handling](docs/kivou/DATA-HANDLING.md) for storage, exports and execu
 
 ## Get started on Windows
 
-The first distribution target is a portable Windows x64 ZIP. The canonical public repository target is **rayaneDR/kivou**; a GitHub repository or release has not yet been published from this workspace. The tested packaged app is local while the final archive is prepared.
+The public source repository is [rayaneDR/kivou](https://github.com/rayaneDR/kivou), on the `kivou` default branch. The Windows x64 portable ZIP has passed packaged smoke and real-model checks. Release assets are uploading; check [Releases](https://github.com/rayaneDR/kivou/releases) for published downloads.
 
 For development, use Node.js 24+ and an installed Codex CLI signed in with ChatGPT. From the repository root, prepare the pinned Windows Goose v1.56.0 runtime, then build and start the focused creator app:
 

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Windows x64 is the tested target. TypeScript/Vite and development/packaged Electron smoke tests have passed. A final repackage and ZIP are being prepared after the Research-mode fix. The intended public repository is `rayaneDR/kivou`; GitHub source/release publication is not yet verified. [Verification record](VERIFICATION.md).
+Windows x64 is the tested target. TypeScript/Vite and development/packaged Electron smoke tests have passed. The final portable ZIP was packaged and verified after the Research-mode fix. The public source is [rayaneDR/kivou](https://github.com/rayaneDR/kivou); release assets are uploading and are not yet a verified public download. [Verification record](VERIFICATION.md).
 
 ## Requirements
 
