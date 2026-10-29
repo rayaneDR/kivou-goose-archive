@@ -6,7 +6,7 @@ Kivou is a Windows-first assistant for independent creators: a compact island at
 
 Built by [rayaneDR](https://github.com/rayaneDR). An independent, Apache-2.0 distribution built on [Goose](https://github.com/aaif-goose/goose), with its source history and credits preserved.
 
-[![Watch Kivou in 24 seconds](docs/media/kivou-poster.png)](docs/media/kivou-introduction.mp4)
+https://github.com/user-attachments/assets/1dcc4d41-a407-4ac0-8808-9448d236d6c7
 
 [Watch Kivou in action — 24-second English demo](docs/media/kivou-introduction.mp4) · [Windows guide](docs/kivou/WINDOWS.md) · [Verification](docs/kivou/VERIFICATION.md)
 
