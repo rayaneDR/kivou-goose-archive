@@ -41,3 +41,9 @@ A consented conversation request sends the project brief, current message and ea
 `island-state.json` stores only the last successful island run ID, alongside local run data. It is restored on restart; invalid pointers fall back to saved successful island notes. The island reads only Kivou run status/results. It does not monitor other applications, read the screen or clipboard, or import account/plugin credentials. A tray quit ends the app; no auto-start is installed.
 
 Markdown rendering skips raw HTML and remote images. Model-suggested links are displayed as text rather than automatically opening browser windows. Local exports include the chosen answer's run record and brief, not the full linked conversation history.
+
+## Playbook library and explicit brand notes
+
+`library.json` contains user-written brand notes and up to 30 custom text playbooks in the application data directory. Included playbooks are original Kivou prompts. No installed skills, environment variables, credentials or plugins are imported. Corrupt or linked library files are rejected and preserved rather than silently overwritten.
+
+Slash expansion and saved-answer keyword search are local operations. Brand notes reach a model only after the user inserts them into a visible message and submits with the normal consent. Playbooks grant no tools or permissions. Remove private content from notes before sharing a run export; inserted notes become part of that run's message.

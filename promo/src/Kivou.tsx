@@ -429,23 +429,23 @@ export const KivouAd = ({ capturesReady }: Props) => {
           />
         </Sequence>
         <Sequence
-          name="Asset Manifest"
+          name="Creator playbooks"
           from={13 * fps}
           durationInFrames={5 * fps}
         >
           <WorkflowScene
-            file="assets.png"
+            file="library.png"
             capturesReady={capturesReady}
             title={
               <>
-                Bring order
+                Keep your
                 <br />
-                to the files.
+                process.
               </>
             }
-            detail="A manifest, without moving your originals."
-            label="Asset Manifest"
-            note="Sample files · Actual local inventory"
+            detail="Reusable playbooks. Your brand, remembered."
+            label="Playbooks & brand"
+            note="Actual interface · Original demo notes"
           />
         </Sequence>
         <Sequence

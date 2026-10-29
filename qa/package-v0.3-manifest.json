@@ -1,0 +1,55 @@
+{
+  "version": "0.3.0",
+  "sourceMatchesPackaged": true,
+  "rendererIndexMatches": true,
+  "files": [
+    {
+      "path": "main.cjs",
+      "sha256": "a938104cd3f1bf78fb3a449bf40f9705f38ed2b5b41dc304610dc7ed56aaa140"
+    },
+    {
+      "path": "preload.cjs",
+      "sha256": "cc1c90791855bf35a926781e04bfdd743a94ac43c82991cb8f63ec8d3d7386ba"
+    },
+    {
+      "path": "service.mjs",
+      "sha256": "e83348e2f66e63f22fabecabad127350eb016668480777610adefdde1f20efe5"
+    },
+    {
+      "path": "codex-guard.mjs",
+      "sha256": "24cd52b2a28779d9d91c846c065e915d6fc094b962090f2952773e8a81ffeccd"
+    },
+    {
+      "path": "library.mjs",
+      "sha256": "3b44f8298ed6cf16ff5a00356000f7eaf68b52ab6859f2e0ef0f4bd4298b09d5"
+    },
+    {
+      "path": "island-controller.cjs",
+      "sha256": "94848fd37adb84fdb9a29a2c9179b691ff682d3d2ee0c8a824b13a20fbd07665"
+    },
+    {
+      "path": "island-state.cjs",
+      "sha256": "4b4efccf7f2d6b2c5f79d58c08b752d715e1b2e99afe8794a21a3b2c14a37f8f"
+    },
+    {
+      "path": "island-preload.cjs",
+      "sha256": "dbb1876482410833b6c8339b68e49fb34bd7f5a15acb6d18c95bf0f70046f1b8"
+    },
+    {
+      "path": "island.js",
+      "sha256": "3da114d6bfa8b7e508a13346f208555d3ca45151c1282f7d96c06cddc989b027"
+    },
+    {
+      "path": "island.html",
+      "sha256": "6e118ee151b71c34b64351a9a7fd14a73da9d9b72d951ecf1d6fdeed8197cb0b"
+    },
+    {
+      "path": "island.css",
+      "sha256": "62131a01829ae095cec72316031cd1ddbb01b5e99ea773ed0a8109cef7d4a4c8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "bdcb0183971a51db4e9094ec5523d4810e2e8812a94912658cd0b889a2908050"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "recordedAt": "2026-10-29T01:35:16.011373+00:00",
-  "version": "0.2.0",
+  "recordedAt": "2026-10-29T02:19:16.417926+00:00",
+  "version": "0.3.0",
   "unitTests": {
     "command": "node --test creator/tests/*.test.mjs",
-    "passed": 29,
+    "passed": 32,
     "failed": 0
   },
   "build": {
@@ -19,11 +19,17 @@
   "independentReview": "qa/island-finish-review.md",
   "designDocumentation": "qa/island-design-documentation.md",
   "staticArtifactInspection": "qa/rea-island-summary.json",
-  "videoQA": "qa/promo-v0.2.json",
+  "videoQA": "qa/promo-v0.3.json",
   "productionDependencyAudit": {
     "vulnerabilities": 0,
     "scope": "ui/creator runtime dependencies at this checkpoint"
   },
   "sourceRepositoryPublic": true,
-  "releasePublished": false
+  "releasePublished": false,
+  "librarySmoke": "qa/library-smoke.json",
+  "libraryModel": "qa/library-model.json",
+  "productDemo": "qa/product-demo.json",
+  "libraryReview": "qa/library-finish-review.md",
+  "libraryDocumentation": "qa/library-design-documentation.md",
+  "packageManifest": "qa/package-v0.3-manifest.json"
 }

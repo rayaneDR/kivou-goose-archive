@@ -1,8 +1,8 @@
 {
-  "recordedAt": "2026-10-28T16:17:24.227595+00:00",
+  "recordedAt": "2026-10-29T01:41:07.499192+00:00",
   "product": "Kivou",
-  "version": "0.1.0",
-  "sourceCommit": "861b3f1b3d2cbc5561d679fd39ce1580622fc83e",
+  "version": "0.2.0",
+  "sourceCommit": "f1aef87bf20ecd4dbb08091d063c8701c72994bb",
   "upstreamTag": "v1.56.0",
   "upstreamCommit": "9949cf926cd42f1d128b9991ed23a496ecace896",
   "platform": "Windows x64",
@@ -12,14 +12,14 @@
   "publicationStatus": "not-published",
   "files": [
     {
-      "file": "Kivou-v0.1.0-windows-x64.zip",
-      "bytes": 382979300,
-      "sha256": "f7469d5448a69483035326cf423d31de89c4fec58f8b77e21ebcd78de54a55b5"
+      "file": "Kivou-v0.2.0-windows-x64.zip",
+      "bytes": 216430855,
+      "sha256": "7e6f8b1039523619c725cdb378a52a44a421db6db0ab5dfd66c56114dbdc0e9a"
     },
     {
-      "file": "Kivou-v0.1.0-source.zip",
-      "bytes": 322004905,
-      "sha256": "7c679155ac0e25fc1cf29f3cf84b2d3bc85567a21f207a9abb7816a53f8a6d40"
+      "file": "kivou-introduction.mp4",
+      "bytes": 4628407,
+      "sha256": "9b4ec27ee6ee7e38fb1a207ce27e3667698358bac825abde25e5cafc0f81bf02"
     }
   ]
 }

@@ -1,5 +1,13 @@
 # Kivou changes
 
+## 0.3.0 — 2026-10-29
+
+- Added reusable creator playbooks, custom slash commands, explicit local brand notes and keyword search over saved projects/messages/answers.
+- Slash expansion and note insertion happen locally before consented model submission; notes-first commands expand correctly and narrow search feedback remains visible.
+- 32 tests and the focused build passed. Actual packaged v0.3 library checks and an expanded-playbook real-model call passed; corrected local-flow checks are recorded separately.
+- Updated the English product film with actual v0.3 creator/playbook captures and an original launch brief.
+- Versioned build output keeps new packages separate from a preview already in use.
+
 ## 0.2.0 — 2026-10-29
 
 - Added a native always-on-top Windows island, quick notes, live run state, cancel, tray access and workspace restore.

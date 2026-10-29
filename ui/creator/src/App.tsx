@@ -1,7 +1,8 @@
 import Answer from './Answer';
 import {useEffect,useState} from 'react';
-import {ArrowUpRight,ArrowRight,Search,FileText,FolderOpen,Plus,Check,LoaderCircle,ArrowLeft,Download,X,Settings,CheckCircle2,AlertCircle,Clock3,ChevronRight,Files,MessageSquare,PanelTop} from 'lucide-react';
+import {ArrowUpRight,ArrowRight,Search,FileText,FolderOpen,Plus,Check,LoaderCircle,ArrowLeft,Download,X,Settings,CheckCircle2,AlertCircle,Clock3,ChevronRight,Files,MessageSquare,PanelTop,BookOpen} from 'lucide-react';
 import Assistant from './Assistant';
+import LibraryView from './LibraryView';
 import type {CreatorInput,CreatorRun,CreatorStatus,KivouBridge} from './bridge';
 
 const definitions={
@@ -11,7 +12,7 @@ const definitions={
  assets:{name:'Asset Manifest',description:'Know what you have before you create.',icon:FolderOpen,output:'File inventory · proposed structure',action:'Build asset manifest',placeholder:''},
 } as const;
 type Workflow=Exclude<keyof typeof definitions,'assistant'>;
-type View='assistant'|'home'|'new'|'run'|'settings';
+type View='library'|'assistant'|'home'|'new'|'run'|'settings';
 const statusLabel=(status:string)=>({running:'In progress',completed:'Ready for review',cancelled:'Cancelled',failed:'Needs attention',interrupted:'Interrupted'}[status]||status);
 const stamp=(date:string)=>new Intl.DateTimeFormat('en',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(date));
 const api=window.kivou;
@@ -19,6 +20,7 @@ function Wordmark(){return <span className="wordmark"><svg width="29" height="31
 function RunIcon({run}:{run:CreatorRun}){const Icon=definitions[run.workflow].icon;return <span className="run-symbol"><Icon size={21}/></span>}
 function App(){
  const [view,setView]=useState<View>('assistant');const [workflow,setWorkflow]=useState<Workflow>('research');const [status,setStatus]=useState<CreatorStatus|null>(null);
+ const [assistantDraft,setAssistantDraft]=useState('');
  const [initialConversation,setInitialConversation]=useState<string|undefined>();
  const [runs,setRuns]=useState<CreatorRun[]>([]);const [selected,setSelected]=useState<CreatorRun|null>(null);const [error,setError]=useState('');
  const [probing,setProbing]=useState(false);const [starting,setStarting]=useState(false);const [notice,setNotice]=useState('');
@@ -35,15 +37,16 @@ function App(){
  async function action(fn:(bridge:KivouBridge)=>Promise<unknown>){if(!api)return;setError('');try{return await fn(api);}catch(e){setError(message(e));}}
  const done=runs.filter(r=>r.status==='completed').length;const active=!!status?.activeRunId;const def=definitions[workflow];
  return <div className="app"><aside className="sidebar"><button className="brand-button" onClick={()=>setView('home')} aria-label="Kivou home"><Wordmark/></button><span className="workspace-name">Your creative workspace</span>
-  <nav aria-label="Main navigation"><button className={view==='assistant'?'nav active':'nav'} onClick={()=>setView('assistant')}><MessageSquare size={19}/> Talk to Kivou</button><button className={view==='home'||view==='new'||view==='run'?'nav active':'nav'} onClick={()=>setView('home')}><Files size={19}/> My workspace</button><button className={view==='settings'?'nav active':'nav'} onClick={()=>setView('settings')}><Settings size={19}/> Model connection</button><button className="nav" onClick={()=>void api?.showIsland?.()}><PanelTop size={19}/> Show island</button></nav>
+  <nav aria-label="Main navigation"><button className={view==='assistant'?'nav active':'nav'} onClick={()=>setView('assistant')}><MessageSquare size={19}/> Talk to Kivou</button><button className={view==='home'||view==='new'||view==='run'?'nav active':'nav'} onClick={()=>setView('home')}><Files size={19}/> My workspace</button><button className={view==='library'?'nav active':'nav'} onClick={()=>setView('library')}><BookOpen size={19}/> Playbooks &amp; brand</button><button className={view==='settings'?'nav active':'nav'} onClick={()=>setView('settings')}><Settings size={19}/> Model connection</button><button className="nav" onClick={()=>void api?.showIsland?.()}><PanelTop size={19}/> Show island</button></nav>
   <div className="sidebar-note"><span className="little-orbit"/><p>A little less busywork.<br/>A lot more creating.</p></div><footer><span>Open source. Built on Goose.</span><span>Kivou · Windows preview</span></footer></aside>
-  <div className="main-shell"><header className="topbar"><span>{view==='assistant'?'Talk to Kivou':view==='home'?'My workspace':view==='settings'?'Model connection':view==='new'?def.name:selected?definitions[selected.workflow].name:'My workspace'}</span><div className="top-actions"><span className="local-label"><span className="status-dot"/> Saved on this device</span><button className="connection-chip" onClick={()=>setView('settings')}><span className={'status-dot '+(status?.provider.ready?'connected':'')}/>{status?.provider.ready?'Codex connected':'Connect Codex'}<ChevronRight size={14}/></button></div></header>
+  <div className="main-shell"><header className="topbar"><span>{view==='library'?'Playbooks & brand':view==='assistant'?'Talk to Kivou':view==='home'?'My workspace':view==='settings'?'Model connection':view==='new'?def.name:selected?definitions[selected.workflow].name:'My workspace'}</span><div className="top-actions"><span className="local-label"><span className="status-dot"/> Saved on this device</span><button className="connection-chip" onClick={()=>setView('settings')}><span className={'status-dot '+(status?.provider.ready?'connected':'')}/>{status?.provider.ready?'Codex connected':'Connect Codex'}<ChevronRight size={14}/></button></div></header>
   <main>
   {!api&&<div className="browser-banner"><AlertCircle size={18}/><span>Interface preview. Open the Windows app to run workflows and save real files.</span></div>}
   {error&&<div className="error-banner" role="alert"><AlertCircle size={18}/><span>{error}</span><button aria-label="Dismiss error" onClick={()=>setError('')}><X size={17}/></button></div>}
   {notice&&<div className="notice" role="status"><Check size={17}/>{notice}</div>}
   <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">{view==='run'&&selected?`${statusLabel(selected.status)}. ${selected.progress}`:''}</div>
-  {view==='assistant'&&<Assistant runs={runs} status={status} initialConversation={initialConversation} onStarted={refresh} onConnect={()=>setView('settings')} onCreate={(w,t,body)=>{newRun(w);setTopic(t.slice(0,500));setAudience('Independent creators');if(w==='content')setText(body);}}/>}
+  {view==='library'&&<LibraryView onUse={prompt=>{setAssistantDraft(prompt);setInitialConversation(undefined);setView('assistant');}}/>}
+  {view==='assistant'&&<Assistant initialDraft={assistantDraft} onDraftUsed={()=>setAssistantDraft('')}  runs={runs} status={status} initialConversation={initialConversation} onStarted={refresh} onConnect={()=>setView('settings')} onCreate={(w,t,body)=>{newRun(w);setTopic(t.slice(0,500));setAudience('Independent creators');if(w==='content')setText(body);}}/>}
   {view==='home'&&<>
    <section className="home-intro"><div><h1>Make room for<br/>your next idea<span className="accent-period">.</span></h1><p>From the first thought to something you can make.<br/>Your research, content and assets, a little more together.</p></div><div className="intro-mark" aria-hidden="true"><svg viewBox="0 0 180 180"><path d="M38 30v120M145 28 62 91l83 61M62 91h65" fill="none" stroke="currentColor" strokeWidth="20" strokeLinecap="round" strokeLinejoin="round"/></svg><span>Good ideas deserve<br/>a clear next step.</span></div></section>
    <section className="workflow-section"><div className="section-heading"><h2>What are we making?</h2><span>Choose a starting point</span></div><div className="workflow-list">{(['research','content','assets'] as Workflow[]).map(w=>{const d=definitions[w];const Icon=d.icon;return <button key={w} className="workflow-option" onClick={()=>newRun(w)}><span className="workflow-icon"><Icon size={25} strokeWidth={1.5}/></span><div><h3>{d.name}</h3><p>{d.description}</p><span className="output-label">{d.output}</span></div><ArrowUpRight className="workflow-arrow" size={23}/></button>;})}</div></section>

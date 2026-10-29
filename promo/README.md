@@ -13,7 +13,7 @@ python scripts/synthesize-audio.py
 npm run dev
 ```
 
-Studio opens the composition `Kivou`. The source keeps each scene on its own named timeline item and the text/graphics independently editable. Actual Kivou captures are included in `public/research.png`, `public/content.png` and `public/assets.png`; Research/Content show preview forms and Asset Manifest shows local inventory of clearly labeled demonstration files. `STORYBOARD.md` describes the edit.
+Studio opens the composition `Kivou`. The source keeps each scene on its own named timeline item and the text/graphics independently editable. The v0.3 edit uses actual native-island captures, `public/assistant.png` with a real model reply to an original launch brief, and `public/library.png` showing the actual Playbooks/brand interface. Historical v0.1 preview-form captures remain in the source but are not used in the current composition. `STORYBOARD.md` describes the edit.
 
 ```powershell
 # Optional: use installed Microsoft Edge instead of downloading a render browser.

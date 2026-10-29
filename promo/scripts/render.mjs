@@ -9,7 +9,7 @@ const required = [
   "island-expanded.png",
   "assistant.png",
   "content.png",
-  "assets.png",
+  "library.png",
   "kivou-original.wav",
 ];
 const missing = required.filter(

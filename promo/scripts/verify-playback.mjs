@@ -10,6 +10,6 @@ try{
  await page.goto(pathToFileURL(html).href);await page.locator('video').evaluate(async video=>{await video.play();});await page.waitForFunction(()=>document.querySelector('video').currentTime>1);
  const playback=await page.locator('video').evaluate(video=>({duration:video.duration,width:video.videoWidth,height:video.videoHeight,time:video.currentTime,paused:video.paused,error:video.error?.message||null}));
  if(playback.error||playback.paused||playback.width!==1920)throw new Error('Encoded video playback failed.');
- const result={at:new Date().toISOString(),passed:true,studioLoaded,playback,scope:'Actual Microsoft Edge playback, muted; generated audio not subjectively auditioned',captures:'Actual packaged Electron interface, original demonstration input and real model replies; synthetic inventory fixture'};
- fs.writeFileSync(path.join(root,'qa/promo-v0.2.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+ const result={at:new Date().toISOString(),passed:true,studioLoaded,playback,scope:'Actual Microsoft Edge playback, muted; generated audio not subjectively auditioned',captures:'Actual packaged Electron interface, original demonstration input and real model replies; original demonstration brand notes'};
+ fs.writeFileSync(path.join(root,'qa/promo-v0.3.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 }finally{await browser.close();}

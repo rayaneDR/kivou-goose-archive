@@ -113,3 +113,5 @@ live-in-desktop-design
 /ui/creator/codex-guard.mjs
 /ui/creator/LICENSE
 /ui/creator/UPSTREAM.md
+
+/ui/creator/library.mjs

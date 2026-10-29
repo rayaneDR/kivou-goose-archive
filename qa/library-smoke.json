@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-29T02:05:57.785Z",
+  "passed": true,
+  "scope": "actual packaged Kivou.exe",
+  "appVersion": "0.3.0",
+  "customPlaybookPersisted": true,
+  "unicodeBrandNotesPersisted": true,
+  "slashExpandedBeforeSend": true,
+  "brandNotesVisibleBeforeSend": true,
+  "localActionsMadeNoModelCall": true,
+  "answerBodySearch": true,
+  "notesBeforeSlashExpansion": true,
+  "narrowNoResultsVisible": true,
+  "widths": [
+    1440,
+    900,
+    390
+  ],
+  "realModelCalls": 0,
+  "realExpandedPlaybookReply": false,
+  "fixtures": "One synthetic saved search record, original custom prompt/brand notes. Model response is real only when realModelCalls=1."
+}

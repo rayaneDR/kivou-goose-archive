@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-29T02:01:58.145Z",
+  "passed": true,
+  "appVersion": "0.3.0",
+  "realModelCalls": 1,
+  "input": "Original product-launch brief and authored demonstration brand notes; no client data",
+  "screenshots": [
+    "qa/product-playbooks.png",
+    "qa/product-conversation.png"
+  ],
+  "resultSaved": true
+}

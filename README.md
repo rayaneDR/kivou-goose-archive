@@ -10,17 +10,22 @@ Built by [rayaneDR](https://github.com/rayaneDR). An independent, Apache-2.0 dis
 
 [Watch the English introduction](docs/media/kivou-introduction.mp4) · [Windows guide](docs/kivou/WINDOWS.md) · [Verification](docs/kivou/VERIFICATION.md)
 
-**0.2 preview status:** the actual Windows executable passed native island checks, project conversation checks and real model calls. The source is public; release assets are being prepared for [GitHub Releases](https://github.com/rayaneDR/kivou/releases). This is an unsigned Windows x64 portable preview.
+**0.3 preview status:** the actual Windows executable passed native island checks, project conversation checks and real model calls. The source is public; release assets are being prepared for [GitHub Releases](https://github.com/rayaneDR/kivou/releases). This is an unsigned Windows x64 portable preview.
 
 ## A little presence. A useful next step.
 
 - **Desktop island:** expand a compact top-screen companion, ask a quick question, follow the actual run state, stop work or return to your workspace. `Ctrl + Alt + K` toggles it when the shortcut is available; the workspace and tray provide the same access.
 - **Project conversations:** save a project brief, ask follow-up questions with the earlier context, reopen your work, and export an answer. Island notes survive a full restart and keep the last successful context after an interrupted or cancelled turn.
+- **Playbooks:** reuse original included prompts or save your own. `/hooks`, `/critique` and `/repurpose` expand into editable instructions before anything is sent.
+- **Brand notes:** save your audience and voice locally, then explicitly add them to a visible message when useful.
+- **Saved-answer search:** find a project by its title, your message or a phrase in a previous answer. Local keyword matching works without a model.
 - **Research Brief:** prepare a draft with source suggestions and explicit uncertainties. Source links remain unverified until you review them.
 - **Content Pack:** turn supplied text into three hooks, a short script, shot list, captions and platform copy. A conversation answer can be handed straight into the workflow.
 - **Asset Manifest:** inventory filenames and sizes and propose organization. Original files stay where they are.
 
-![Actual Kivou project conversation; original demonstration brief and real model responses](qa/assistant-conversation-viewport.png)
+![Actual Kivou project conversation; original demonstration brief and real model response](qa/product-conversation.png)
+
+![Kivou creator playbooks and explicit brand notes, using original demonstration content](qa/product-playbooks.png)
 
 ## Get started on Windows
 
@@ -66,10 +71,10 @@ The runtime is pinned to Goose **v1.56.0**, commit `9949cf926cd42f1d128b9991ed23
 
 The island interaction was informed by the public behavior of [Coucou](https://github.com/Louis-CFM/coucou). Kivou uses its own geometric K, interface code, colors and audio; no Coucou character, artwork, sounds or source were copied. This preview does not claim complete Goose or Coucou feature parity.
 
-[Feature matrix](replica/features.csv) · [Change log](CHANGELOG-KIVOU.md) · [Test evidence](qa/checks.json) · [Editable Remotion video](promo/README.md)
+[Feature matrix](replica/features.csv) · [Change log](CHANGELOG-KIVOU.md) · [Test evidence](qa/checks.json) · [Editable Remotion video](promo/README.md) · [Feature research and decisions](docs/kivou/FEATURE-RESEARCH.md)
 
 ## Contributing and license
 
-Useful contributions include reproducible Windows bug reports, accessible interaction improvements and tests for cancellation, context recovery or exports. Remove private paths, secrets and content from reports. Kivou's CI is manually triggered; no automatic publishing workflow is enabled.
+See the [Kivou contribution guide](docs/kivou/CONTRIBUTING.md). Useful contributions include reproducible Windows bug reports, accessible interaction improvements and tests for cancellation, context recovery or exports. Remove private paths, secrets and content from reports. Kivou's CI is manually triggered; no automatic publishing workflow is enabled.
 
 [Apache License 2.0](LICENSE). Upstream history and copyright notices are preserved. Kivou is independent and is not endorsed by Goose maintainers or the Agentic AI Foundation.

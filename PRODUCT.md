@@ -13,3 +13,6 @@ A new Windows user can launch, check model connection, complete a workflow, insp
 
 ## Latest user steering — 2026-10-29
 The owner clarified the desired experience: an AI agent with a Dynamic Island-like desktop presence, using Coucou as a behavior reference. Kivou retains its own name, K mark and code. The three-form creator v0.1 release is superseded by a v0.2 island/conversation preview; the old release remains unpublished. General conversation is advice and drafting with no tools; source research stays a separate explicit workflow. No whole-Goose feature parity or superiority claim.
+
+## Selected agent additions — 2026-10-29
+The owner authorized researching established open-source agents and adding useful features with our judgment. v0.3 adds original creator playbooks/custom slash commands, explicit user-written brand notes, and local keyword search across saved project messages and answers. Slash commands expand locally for review; notes are visibly inserted by the user. No automatic skill/plugin imports, hidden memory injection, shell evaluation or extra model permissions. The actual packaged v0.3 app passed local smoke and an earlier expanded-playbook real-model call; current focused correction checks are separately no-model.

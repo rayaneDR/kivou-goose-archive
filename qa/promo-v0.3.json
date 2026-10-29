@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T02:17:48.800Z",
+  "passed": true,
+  "studioLoaded": true,
+  "playback": {
+    "duration": 24,
+    "width": 1920,
+    "height": 1080,
+    "time": 1.036911,
+    "paused": false,
+    "error": null
+  },
+  "scope": "Actual Microsoft Edge playback, muted; generated audio not subjectively auditioned",
+  "captures": "Actual packaged Electron interface, original demonstration input and real model replies; original demonstration brand notes"
+}

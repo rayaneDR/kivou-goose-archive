@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-29T01:41:07.499192+00:00",
+  "product": "Kivou",
+  "version": "0.2.0",
+  "sourceCommit": "f1aef87bf20ecd4dbb08091d063c8701c72994bb",
+  "upstreamTag": "v1.56.0",
+  "upstreamCommit": "9949cf926cd42f1d128b9991ed23a496ecace896",
+  "platform": "Windows x64",
+  "zipCRCVerified": true,
+  "packagedSmokeVerified": true,
+  "packagedModelVerified": true,
+  "publicationStatus": "not-published",
+  "files": [
+    {
+      "file": "Kivou-v0.2.0-windows-x64.zip",
+      "bytes": 216430855,
+      "sha256": "7e6f8b1039523619c725cdb378a52a44a421db6db0ab5dfd66c56114dbdc0e9a"
+    },
+    {
+      "file": "kivou-introduction.mp4",
+      "bytes": 4628407,
+      "sha256": "9b4ec27ee6ee7e38fb1a207ce27e3667698358bac825abde25e5cafc0f81bf02"
+    }
+  ]
+}

@@ -23,3 +23,6 @@ Native Windows island,desktop,must,no,yes,Actual packaged lifecycle and constrai
 Saved project conversations,assistant,must,no,yes,Actual packaged two-turn context recall and content handoff
 Direct island messages,assistant,must,no,yes,Actual packaged real model response from island
 Durable island context,assistant,must,no,yes,Full quit/relaunch and cancelled-turn recovery verified with real model
+Creator playbooks and slash commands,assistant,must,no,yes,Actual packaged local expansion and original real-model prompt response
+Explicit local brand notes,assistant,must,no,yes,Unicode persistence and visible insertion before consented sending
+Saved-answer keyword search,assistant,should,no,yes,Actual packaged title/message/answer search with narrow no-results feedback

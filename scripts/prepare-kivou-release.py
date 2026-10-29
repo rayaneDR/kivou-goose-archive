@@ -8,8 +8,8 @@ import subprocess
 import zipfile
 
 root = Path(__file__).resolve().parent.parent
-app = root / 'ui/creator/out/Kivou-win32-x64'
 version = json.loads((root / 'ui/creator/package.json').read_text(encoding='utf-8'))['version']
+app = root / 'ui/creator/out' / f'v{version}' / 'Kivou-win32-x64'
 releases = root / 'releases'
 releases.mkdir(exist_ok=True)
 smoke = json.loads((root / 'qa/desktop-smoke.json').read_text(encoding='utf-8'))
@@ -19,6 +19,10 @@ assert live['passed'] and live['status'] == 'completed'
 for check in ['island-smoke.json','assistant-live.json','island-recovery-live.json','island-constrained.json']:
     assert json.loads((root / 'qa' / check).read_text(encoding='utf-8'))['passed'], check
 assert (app / 'Kivou.exe').is_file()
+if (root / 'creator/library.mjs').exists():
+    library = json.loads((root / 'qa/library-smoke.json').read_text(encoding='utf-8'))
+    assert library['passed'] and library['appVersion'] == version and library['scope'] == 'actual packaged Kivou.exe'
+    assert (root / 'creator/library.mjs').read_bytes() == (app / 'resources/app/library.mjs').read_bytes()
 for name in ['service.mjs', 'codex-guard.mjs']:
     assert (root / 'creator' / name).read_bytes() == (app / 'resources/app' / name).read_bytes()
 for name in ['main.cjs','preload.cjs','island-controller.cjs','island-preload.cjs','island-state.cjs','island.html','island.css','island.js']:

@@ -1,6 +1,15 @@
 # Kivou verification
 
-## Current Windows 0.2 preview — 2026-10-29
+## Current Windows 0.3 preview — 2026-10-29
+
+- **32 tests passed**, including local playbook CRUD, Unicode notes, command collisions, builtin protection and corrupt-file preservation. The focused UI TypeScript/Vite build passed.
+- [Actual packaged library smoke](../../qa/library-smoke.json): version 0.3.0, saved custom prompt/notes, visible slash expansion, explicit note insertion, answer-body search and 1440/900/390 widths. Current focused checks made **no model calls**.
+- [Earlier real expanded-playbook run](../../qa/library-model.json): one actual model response through packaged v0.3. The [product demonstration](../../qa/product-demo.json) separately records one real reply to an original launch brief. Neither is client work.
+- [Independent review](../../qa/library-finish-review.md): notes-first slash expansion and narrow no-results feedback were fixed; the focused verdict scores both resolved. [Design documentation](../../qa/library-design-documentation.md).
+- [Package manifest](../../qa/package-v0.3-manifest.json) matches the shipped main/preload/service/guard/library/island files to current source and the renderer index to the current build. The inherited core/island tests below are baseline evidence; they are not represented as a fresh v0.3 full-process model-recovery run.
+- The updated English introduction has [actual Edge playback evidence](../../qa/promo-v0.3.json). Sources and feature decisions are in [feature research](FEATURE-RESEARCH.md).
+
+## Windows 0.2 baseline — 2026-10-29
 
 | Check | Observed evidence | Boundary |
 | --- | --- | --- |

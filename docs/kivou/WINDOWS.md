@@ -2,7 +2,7 @@
 
 ## Current status
 
-Windows x64 is the tested target. Kivou 0.2 adds the native island and saved project conversations. The focused build, packaged lifecycle checks, real conversation calls and full-process recovery checks passed. Source is public at [rayaneDR/kivou](https://github.com/rayaneDR/kivou). See [Verification](VERIFICATION.md) and published [Releases](https://github.com/rayaneDR/kivou/releases) for download status.
+Windows x64 is the tested target. Kivou 0.3 includes the native island, saved project conversations, playbooks, explicit brand notes and local answer search. The focused build, packaged lifecycle checks, real conversation calls and full-process recovery checks passed. Source is public at [rayaneDR/kivou](https://github.com/rayaneDR/kivou). See [Verification](VERIFICATION.md) and published [Releases](https://github.com/rayaneDR/kivou/releases) for download status.
 
 ## Requirements
 
@@ -102,3 +102,11 @@ Island notes keep the last successful context after a full restart, cancellation
 Project conversations have a name and optional brief. The connected model receives that project's prior messages when you allow a follow-up. General chat does not use tools. Use the explicit creator workflows for research or structured content. At 20 turns or 80,000 characters of context, start another project with a summary. Model login and usage limits remain the user's responsibility.
 
 The portable package includes the ACP adapter. Its unused bundled optional Codex native binary is excluded: Kivou requires your separately installed, signed-in Codex CLI and always routes it through its isolation guard. Actual packaged model calls validated that path.
+
+## Playbooks, brand notes and search
+
+Open **Playbooks & brand** to use an included prompt, duplicate it, or save up to 30 custom playbooks. A lowercase `/command idea` in a conversation expands locally into editable instructions. Review it, add notes if useful, and explicitly consent before sending. Adding notes to a slash request also expands the command locally first. No shell or environment substitutions run.
+
+Brand notes hold up to 8,000 characters and are saved in local `library.json`. **Add brand notes** inserts the actual text into the composer for review. Saved notes alone never cause a model request. Search in the Projects rail matches saved project titles, messages and answer text; it is local keyword search.
+
+Versioned package output is `ui/creator/out/v0.3.0/Kivou-win32-x64`. To switch from an already open preview, use its tray **Quit Kivou** command before opening the new executable. Existing saved runs remain in the same user-data folder. No automatic update or auto-start is installed.

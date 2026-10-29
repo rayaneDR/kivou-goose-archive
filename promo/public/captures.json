@@ -1,10 +1,10 @@
 {
-  "version": "0.2.0",
-  "provenance": "Actual packaged Kivou Electron captures. Native island capturePage with frame settle; saved conversation uses original demonstration input and real Codex answers. Asset contents are synthetic fixtures.",
+  "version": "0.3.0",
+  "provenance": "Actual Kivou Electron captures; real model reply over original demonstration input; authored brand notes. No customer data.",
   "evidence": [
-    "qa/island-smoke.json",
-    "qa/assistant-live.json",
-    "qa/desktop-smoke.json"
+    "qa/product-demo.json",
+    "qa/library-smoke.json",
+    "qa/promo-v0.3.json"
   ],
   "captures": [
     {
@@ -17,11 +17,11 @@
     },
     {
       "file": "assistant.png",
-      "sha256": "9273af07defe9d0ca0f24d60cd6cd0779fe28a4f78e90f98e3011ca2f5955f9d"
+      "sha256": "300e80eaa100a91ce66053e7e20432e45d47cf8dde11fd66f567d948afc0dd75"
     },
     {
-      "file": "assets.png",
-      "sha256": "4764db048492aad62d7efadb566b2fabb45128d098cdd8a3970f1efae953292c"
+      "file": "library.png",
+      "sha256": "8ebd96cb6a9140e81f9000d4176a2c3fdbbedd736c3af844f60a2888f7e36d0c"
     }
   ]
 }
